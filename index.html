@@ -1,0 +1,2253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aabhishek Siloya — founder and strategic partner. The CGP System brings clarity, growth and profit into the decisions that shape what comes next.">
+  <meta name="theme-color" content="#11110f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aabhishek Siloya — Founder and Strategic Partner">
+  <meta property="og:description" content="Clarity. Growth. Profit. For the decisions that shape what comes next.">
+  <meta property="og:image" content="assets/aabhishek-black-white-side-profile.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aabhishek Siloya — Founder and Strategic Partner">
+  <meta name="twitter:description" content="Clarity. Growth. Profit. For the decisions that shape what comes next.">
+  <meta name="twitter:image" content="assets/aabhishek-black-white-side-profile.png">
+  <link rel="canonical" href="aabhishek-quiet-authority-v3.html">
+  <title>Aabhishek Siloya — Founder and Strategic Partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #151512;
+      --ink-soft: #25241f;
+      --paper: #f2eee6;
+      --paper-bright: #f8f5ef;
+      --stone: #d7d0c4;
+      --muted: #6a655d;
+      --bronze: #9c7c55;
+      --bronze-light: #c2a580;
+      --line-dark: rgba(21, 21, 18, .17);
+      --line-light: rgba(248, 245, 239, .18);
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --header-height: 76px;
+      --shell: min(1240px, calc(100% - 80px));
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; font: inherit; }
+    img { display: block; max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--bronze-light); outline-offset: 5px; }
+    ::selection { background: var(--bronze); color: var(--paper-bright); }
+
+    .skip-link {
+      background: var(--paper-bright);
+      color: var(--ink);
+      left: 18px;
+      padding: 12px 16px;
+      position: fixed;
+      top: -100px;
+      z-index: 100;
+    }
+    .skip-link:focus { top: 18px; }
+
+    .shell { margin-inline: auto; width: var(--shell); }
+    .serif {
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: -.035em;
+      line-height: .98;
+    }
+    .kicker {
+      align-items: center;
+      display: flex;
+      font-size: 10px;
+      font-weight: 600;
+      gap: 12px;
+      letter-spacing: .18em;
+      line-height: 1.4;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .kicker::before {
+      background: currentColor;
+      content: "";
+      height: 1px;
+      opacity: .55;
+      width: 30px;
+    }
+    .body-copy { color: var(--muted); max-width: 55ch; }
+
+    .site-header {
+      color: var(--paper-bright);
+      height: var(--header-height);
+      inset: 0 0 auto;
+      position: fixed;
+      transition: background-color .35s ease, border-color .35s ease, color .35s ease;
+      z-index: 30;
+    }
+    .site-header.scrolled {
+      backdrop-filter: blur(16px);
+      background: color-mix(in srgb, var(--paper) 94%, transparent);
+      border-bottom: 1px solid var(--line-dark);
+      color: var(--ink);
+    }
+    .header-inner {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: space-between;
+    }
+    .mark {
+      align-items: baseline;
+      display: inline-flex;
+      font-family: var(--serif);
+      font-size: 25px;
+      gap: 9px;
+      letter-spacing: -.03em;
+      line-height: 1;
+    }
+    .mark span {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      opacity: .66;
+      text-transform: uppercase;
+    }
+    .desktop-nav { display: flex; gap: 29px; list-style: none; margin: 0; padding: 0; }
+    .desktop-nav a,
+    .menu-toggle {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .desktop-nav a { opacity: .72; transition: opacity .2s ease; }
+    .desktop-nav a:hover { opacity: 1; }
+    .menu-toggle {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      display: none;
+      min-height: 44px;
+      padding: 8px 0 8px 16px;
+    }
+
+    .mobile-menu {
+      background: var(--ink);
+      color: var(--paper-bright);
+      display: grid;
+      inset: 0;
+      opacity: 0;
+      padding: calc(var(--header-height) + 34px) 28px 30px;
+      pointer-events: none;
+      position: fixed;
+      transform: translateY(-10px);
+      transition: opacity .28s var(--ease), transform .28s var(--ease);
+      z-index: 20;
+    }
+    .mobile-menu.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .mobile-menu nav { align-self: center; }
+    .mobile-menu ul { list-style: none; margin: 0; padding: 0; }
+    .mobile-menu li { border-bottom: 1px solid var(--line-light); }
+    .mobile-menu a {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(40px, 12vw, 64px);
+      letter-spacing: -.035em;
+      line-height: 1;
+      padding: 16px 0 18px;
+    }
+    .mobile-note {
+      align-self: end;
+      color: rgba(248, 245, 239, .58);
+      font-size: 11px;
+      letter-spacing: .08em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      background: var(--ink);
+      color: var(--paper-bright);
+      min-height: 100svh;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-portrait {
+      inset: 0 0 0 auto;
+      margin: 0;
+      overflow: hidden;
+      position: absolute;
+      width: 53%;
+    }
+    .hero-portrait::before {
+      background: linear-gradient(90deg, var(--ink) 0%, rgba(21,21,18,.84) 16%, rgba(21,21,18,.18) 56%, rgba(21,21,18,0) 100%);
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+    .hero-portrait::after {
+      background: linear-gradient(0deg, rgba(21,21,18,.56), transparent 35%);
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+    .hero-portrait img {
+      filter: contrast(1.04);
+      height: calc(100% + 34px);
+      object-fit: cover;
+      object-position: 54% 30%;
+      transform: translateY(var(--portrait-shift, 0px)) scale(1.025);
+      width: 100%;
+      will-change: transform;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 100svh;
+      padding: calc(var(--header-height) + 54px) 0 58px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-copy { width: min(780px, 69%); }
+    .hero .kicker { color: var(--bronze-light); margin-bottom: 27px; }
+    .hero h1 {
+      font-size: clamp(82px, 11.2vw, 166px);
+      margin: 0;
+      max-width: 6.5ch;
+    }
+    .hero h1 span { display: block; }
+    .hero-position {
+      border-left: 1px solid var(--bronze);
+      margin: 34px 0 0 5px;
+      max-width: 570px;
+      padding-left: 23px;
+    }
+    .hero-position strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(26px, 3vw, 39px);
+      font-weight: 400;
+      letter-spacing: -.025em;
+      line-height: 1.08;
+    }
+    .hero-position p {
+      color: rgba(248, 245, 239, .62);
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 14px 0 0;
+      max-width: 58ch;
+    }
+    .hero-actions { align-items: center; display: flex; gap: 24px; margin-top: 27px; }
+    .primary-action {
+      align-items: center;
+      background: var(--paper-bright);
+      border: 1px solid var(--paper-bright);
+      color: var(--ink);
+      display: inline-flex;
+      font-size: 10px;
+      font-weight: 600;
+      gap: 22px;
+      justify-content: space-between;
+      letter-spacing: .14em;
+      min-height: 48px;
+      padding: 0 19px;
+      text-transform: uppercase;
+      transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s var(--ease);
+    }
+    .primary-action::after { content: "↗"; font-size: 16px; line-height: 1; }
+    .primary-action:hover {
+      background: var(--bronze-light);
+      border-color: var(--bronze-light);
+      transform: translateY(-2px);
+    }
+    .secondary-action {
+      border-bottom: 1px solid rgba(248,245,239,.38);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      padding: 7px 0;
+      text-transform: uppercase;
+    }
+    .hero-meta {
+      align-items: center;
+      bottom: 59px;
+      display: flex;
+      font-size: 9px;
+      gap: 10px;
+      letter-spacing: .14em;
+      position: absolute;
+      right: 0;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+    .hero-meta::before { background: var(--bronze); content: ""; height: 48px; width: 1px; }
+    .hero [data-hero] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .85s var(--ease), transform .85s var(--ease);
+    }
+    .loaded .hero [data-hero] { opacity: 1; transform: translateY(0); }
+    .loaded .hero [data-hero="2"] { transition-delay: 100ms; }
+    .loaded .hero [data-hero="3"] { transition-delay: 190ms; }
+    .loaded .hero [data-hero="4"] { transition-delay: 280ms; }
+
+    main section { scroll-margin-top: var(--header-height); }
+    .premise { background: var(--paper); padding: 154px 0 168px; }
+    .premise-grid {
+      display: grid;
+      gap: 72px;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+    }
+    .premise .kicker { color: var(--bronze); margin-bottom: 35px; }
+    .premise h2 {
+      font-size: clamp(52px, 6.9vw, 94px);
+      margin: 0;
+      max-width: 11ch;
+    }
+    .premise-aside {
+      align-self: end;
+      border-top: 1px solid var(--line-dark);
+      padding-top: 27px;
+    }
+    .premise-aside p { margin: 0; }
+    .premise-aside p + p { margin-top: 18px; }
+    .premise-note {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 23px;
+      letter-spacing: -.015em;
+      line-height: 1.25;
+    }
+
+    .decisions { background: var(--ink); color: var(--paper-bright); padding: 138px 0 132px; }
+    .section-head {
+      align-items: end;
+      display: grid;
+      gap: 40px;
+      grid-template-columns: .72fr 1.28fr;
+      margin-bottom: 67px;
+    }
+    .section-head .kicker { color: var(--bronze-light); }
+    .section-head h2 {
+      font-size: clamp(48px, 5.6vw, 76px);
+      margin: 0;
+      max-width: 12ch;
+    }
+    .decision-list { border-top: 1px solid var(--line-light); }
+    .decision-row {
+      align-items: start;
+      border-bottom: 1px solid var(--line-light);
+      display: grid;
+      gap: 32px;
+      grid-template-columns: 68px minmax(210px, .72fr) minmax(300px, 1.28fr);
+      padding: 31px 0 35px;
+      transition: padding-left .35s var(--ease);
+    }
+    .decision-row:hover { padding-left: 13px; }
+    .decision-no {
+      color: var(--bronze-light);
+      font-family: var(--serif);
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    .decision-row h3 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: -.025em;
+      line-height: 1.05;
+      margin: 0;
+    }
+    .decision-row p { color: rgba(248, 245, 239, .57); margin: 0; max-width: 55ch; }
+
+    .perspective { background: var(--paper-bright); padding: 154px 0; }
+    .perspective-grid {
+      display: grid;
+      gap: 80px;
+      grid-template-columns: minmax(300px, .73fr) minmax(0, 1.27fr);
+    }
+    .perspective .kicker { color: var(--bronze); }
+    .founder-line {
+      border-bottom: 1px solid var(--line-dark);
+      border-top: 1px solid var(--line-dark);
+      margin-top: 34px;
+      padding: 25px 0;
+    }
+    .founder-line strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: -.02em;
+    }
+    .founder-line span {
+      color: var(--muted);
+      display: block;
+      font-size: 10px;
+      letter-spacing: .12em;
+      margin-top: 5px;
+      text-transform: uppercase;
+    }
+    .perspective-copy h2 {
+      font-size: clamp(49px, 5.7vw, 77px);
+      margin: 0;
+      max-width: 12ch;
+    }
+    .perspective-copy > p {
+      color: var(--muted);
+      margin: 33px 0 0;
+      max-width: 61ch;
+    }
+    .pull-quote {
+      border-left: 1px solid var(--bronze);
+      font-family: var(--serif);
+      font-size: clamp(26px, 3vw, 39px);
+      letter-spacing: -.025em;
+      line-height: 1.12;
+      margin: 48px 0 0;
+      max-width: 19ch;
+      padding-left: 24px;
+    }
+
+    .principles { background: var(--stone); padding: 126px 0 132px; }
+    .principles-heading {
+      align-items: end;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 58px;
+    }
+    .principles h2 { font-size: clamp(48px, 5.5vw, 74px); margin: 25px 0 0; }
+    .principles-heading > p { color: var(--muted); margin: 0; max-width: 36ch; }
+    .principle-list { border-top: 1px solid var(--line-dark); counter-reset: principle; }
+    .principle {
+      align-items: baseline;
+      border-bottom: 1px solid var(--line-dark);
+      counter-increment: principle;
+      display: grid;
+      gap: 30px;
+      grid-template-columns: 50px minmax(230px, .8fr) minmax(300px, 1.2fr);
+      padding: 27px 0 29px;
+    }
+    .principle::before {
+      color: var(--bronze);
+      content: "0" counter(principle);
+      font-family: var(--serif);
+      font-size: 19px;
+    }
+    .principle h3 {
+      font-family: var(--serif);
+      font-size: 29px;
+      font-weight: 400;
+      letter-spacing: -.02em;
+      margin: 0;
+    }
+    .principle p { color: var(--muted); margin: 0; max-width: 54ch; }
+
+    .contact { background: var(--paper); padding: 148px 0 156px; }
+    .contact-frame { border-top: 1px solid var(--ink); padding-top: 35px; }
+    .contact .kicker { color: var(--bronze); }
+    .contact h2 {
+      font-size: clamp(61px, 8.2vw, 116px);
+      margin: 48px 0 0;
+      max-width: 10ch;
+    }
+    .contact-bottom {
+      align-items: end;
+      display: flex;
+      gap: 50px;
+      justify-content: space-between;
+      margin-top: 54px;
+    }
+    .contact-bottom p { color: var(--muted); margin: 0; max-width: 48ch; }
+    .contact-link {
+      border-bottom: 1px solid var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.7vw, 38px);
+      letter-spacing: -.025em;
+      line-height: 1.15;
+      padding-bottom: 7px;
+      transition: color .2s ease, border-color .2s ease;
+      white-space: nowrap;
+    }
+    .contact-link:hover { border-color: var(--bronze); color: var(--bronze); }
+
+    /* Quiet Authority V2 narrative system */
+    .philosophy {
+      background: var(--paper);
+      padding: 148px 0 158px;
+    }
+    .philosophy-head {
+      display: grid;
+      gap: 56px;
+      grid-template-columns: minmax(0, 1.16fr) minmax(300px, .84fr);
+      margin-bottom: 72px;
+    }
+    .philosophy .kicker { color: var(--bronze); margin-bottom: 31px; }
+    .philosophy h2 {
+      font-size: clamp(56px, 7vw, 96px);
+      margin: 0;
+      max-width: 9ch;
+    }
+    .philosophy-intro {
+      align-self: end;
+      border-top: 1px solid var(--line-dark);
+      color: var(--muted);
+      margin: 0;
+      max-width: 48ch;
+      padding-top: 25px;
+    }
+    .philosophy-list {
+      border-top: 1px solid var(--line-dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .philosophy-item {
+      border-bottom: 1px solid var(--line-dark);
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 44px 1fr;
+      min-height: 190px;
+      padding: 32px 42px 36px 0;
+    }
+    .philosophy-item:nth-child(odd) {
+      border-right: 1px solid var(--line-dark);
+      padding-right: 54px;
+    }
+    .philosophy-item:nth-child(even) { padding-left: 42px; }
+    .philosophy-no {
+      color: var(--bronze);
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.25;
+    }
+    .philosophy-item h3 {
+      font-family: var(--serif);
+      font-size: 31px;
+      font-weight: 400;
+      letter-spacing: -.025em;
+      line-height: 1.05;
+      margin: 0 0 13px;
+    }
+    .philosophy-item p { color: var(--muted); margin: 0; max-width: 46ch; }
+
+    .cgp {
+      background: var(--ink);
+      color: var(--paper-bright);
+      padding: 137px 0 130px;
+    }
+    .cgp-head {
+      align-items: end;
+      display: grid;
+      gap: 48px;
+      grid-template-columns: .7fr 1.3fr;
+      margin-bottom: 68px;
+    }
+    .cgp .kicker { color: var(--bronze-light); }
+    .cgp h2 {
+      font-size: clamp(51px, 5.8vw, 79px);
+      margin: 0;
+      max-width: 12ch;
+    }
+    .cgp-thesis {
+      border-bottom: 1px solid var(--line-light);
+      border-top: 1px solid var(--line-light);
+      color: rgba(248,245,239,.68);
+      display: flex;
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.4vw, 32px);
+      justify-content: space-between;
+      letter-spacing: -.015em;
+      line-height: 1.2;
+      margin-bottom: 9px;
+      padding: 25px 0 27px;
+    }
+    .cgp-thesis span:not(:last-child)::after {
+      color: var(--bronze-light);
+      content: "·";
+      margin-left: clamp(28px, 4vw, 70px);
+    }
+    .cgp-list { border-bottom: 1px solid var(--line-light); }
+    .cgp-item {
+      align-items: center;
+      border-top: 1px solid var(--line-light);
+      display: grid;
+      gap: 36px;
+      grid-template-columns: 124px minmax(210px, .65fr) minmax(320px, 1.35fr);
+      padding: 30px 0 34px;
+      transition: padding-left .35s var(--ease);
+    }
+    .cgp-item:hover { padding-left: 14px; }
+    .cgp-letter {
+      color: var(--bronze-light);
+      font-family: var(--serif);
+      font-size: clamp(76px, 8vw, 116px);
+      font-weight: 300;
+      letter-spacing: -.05em;
+      line-height: .76;
+    }
+    .cgp-item h3 {
+      font-family: var(--serif);
+      font-size: clamp(35px, 3.3vw, 47px);
+      font-weight: 400;
+      letter-spacing: -.03em;
+      line-height: 1;
+      margin: 0;
+    }
+    .cgp-item p { color: rgba(248,245,239,.58); margin: 0; max-width: 59ch; }
+
+    .promise {
+      background: var(--paper-bright);
+      padding: 148px 0 154px;
+    }
+    .promise-grid {
+      display: grid;
+      gap: 78px;
+      grid-template-columns: minmax(280px, .66fr) minmax(0, 1.34fr);
+    }
+    .promise .kicker { color: var(--bronze); }
+    .promise h2 {
+      font-size: clamp(54px, 6.6vw, 88px);
+      margin: 33px 0 0;
+      max-width: 11ch;
+    }
+    .promise-list { border-top: 1px solid var(--line-dark); counter-reset: promise; }
+    .promise-item {
+      border-bottom: 1px solid var(--line-dark);
+      counter-increment: promise;
+      display: grid;
+      gap: 25px;
+      grid-template-columns: 47px 1fr;
+      padding: 28px 0 31px;
+    }
+    .promise-item::before {
+      color: var(--bronze);
+      content: "0" counter(promise);
+      font-family: var(--serif);
+      font-size: 19px;
+    }
+    .promise-item h3 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: -.025em;
+      line-height: 1.05;
+      margin: 0 0 10px;
+    }
+    .promise-item p { color: var(--muted); margin: 0; max-width: 55ch; }
+
+    .expertise {
+      background: var(--paper-bright);
+      padding: 140px 0 147px;
+    }
+    .expertise-head {
+      align-items: end;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 62px;
+    }
+    .expertise .kicker { color: var(--bronze); }
+    .expertise h2 {
+      font-size: clamp(53px, 6.3vw, 84px);
+      margin: 29px 0 0;
+      max-width: 10ch;
+    }
+    .expertise-head > p { color: var(--muted); margin: 0; max-width: 39ch; }
+    .expertise-grid {
+      border-top: 1px solid var(--line-dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .expertise-item {
+      border-bottom: 1px solid var(--line-dark);
+      min-height: 215px;
+      padding: 31px 48px 34px 0;
+      position: relative;
+    }
+    .expertise-item:nth-child(odd) {
+      border-right: 1px solid var(--line-dark);
+      padding-right: 57px;
+    }
+    .expertise-item:nth-child(even) { padding-left: 47px; }
+    .expertise-item span {
+      color: var(--bronze);
+      display: block;
+      font-family: var(--serif);
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+    .expertise-item h3 {
+      font-family: var(--serif);
+      font-size: 31px;
+      font-weight: 400;
+      letter-spacing: -.025em;
+      line-height: 1.05;
+      margin: 0 0 15px;
+    }
+    .expertise-item p { color: var(--muted); margin: 0; max-width: 48ch; }
+
+    .about-final {
+      background: var(--ink-soft);
+      color: var(--paper-bright);
+      padding: 136px 0 143px;
+    }
+    .about-final-grid {
+      display: grid;
+      gap: 78px;
+      grid-template-columns: minmax(270px, .72fr) minmax(0, 1.28fr);
+    }
+    .about-final .kicker { color: var(--bronze-light); }
+    .about-signature {
+      border-bottom: 1px solid var(--line-light);
+      border-top: 1px solid var(--line-light);
+      margin-top: 34px;
+      padding: 24px 0 26px;
+    }
+    .about-signature strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 400;
+      letter-spacing: -.025em;
+    }
+    .about-signature span {
+      color: rgba(248,245,239,.52);
+      display: block;
+      font-size: 9px;
+      letter-spacing: .14em;
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+    .about-final h2 {
+      font-size: clamp(51px, 5.9vw, 80px);
+      margin: 0;
+      max-width: 12ch;
+    }
+    .about-final-copy > p {
+      color: rgba(248,245,239,.62);
+      margin: 29px 0 0;
+      max-width: 62ch;
+    }
+    .about-final-copy > p:first-of-type {
+      color: var(--paper-bright);
+      font-family: var(--serif);
+      font-size: 26px;
+      letter-spacing: -.015em;
+      line-height: 1.28;
+    }
+    .about-links { display: flex; gap: 25px; margin-top: 36px; }
+    .about-links a {
+      border-bottom: 1px solid rgba(248,245,239,.42);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      padding-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .footer { background: var(--ink); color: var(--paper-bright); padding: 34px 0 31px; }
+    .footer-main {
+      align-items: center;
+      display: flex;
+      font-size: 9px;
+      justify-content: space-between;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { opacity: .65; transition: opacity .2s ease; }
+    .footer-links a:hover { opacity: 1; }
+    .footer-disclaimer {
+      border-top: 1px solid var(--line-light);
+      color: rgba(248,245,239,.43);
+      font-size: 9px;
+      letter-spacing: .05em;
+      margin: 25px 0 0;
+      padding-top: 19px;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease);
+    }
+    [data-reveal].visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      :root { --shell: min(100% - 48px, 1240px); }
+      .hero-copy { width: 75%; }
+      .hero-portrait { width: 58%; }
+      .premise-grid,
+      .section-head,
+      .perspective-grid { gap: 48px; }
+      .decision-row { grid-template-columns: 50px minmax(180px, .7fr) minmax(240px, 1.3fr); }
+      .perspective-grid { grid-template-columns: .65fr 1.35fr; }
+      .philosophy-head,
+      .cgp-head,
+      .promise-grid,
+      .about-final-grid { gap: 50px; }
+      .cgp-item { grid-template-columns: 98px minmax(170px, .6fr) minmax(260px, 1.4fr); }
+      .expertise-item:nth-child(odd) { padding-right: 40px; }
+      .expertise-item:nth-child(even) { padding-left: 38px; }
+    }
+
+    @media (max-width: 720px) {
+      :root {
+        --header-height: 68px;
+        --shell: min(100% - 40px, 1240px);
+      }
+      .desktop-nav { display: none; }
+      .menu-toggle { align-items: center; display: inline-flex; }
+      .hero { min-height: 100svh; }
+      .hero-portrait { inset: 0; width: 100%; }
+      .hero-portrait::before {
+        background: linear-gradient(0deg, var(--ink) 0%, rgba(21,21,18,.91) 33%, rgba(21,21,18,.3) 72%, rgba(21,21,18,.2) 100%);
+      }
+      .hero-portrait::after { background: rgba(21,21,18,.12); }
+      .hero-portrait img { height: 68%; object-position: 50% 24%; }
+      .hero-content { justify-content: flex-end; padding-bottom: 36px; }
+      .hero-copy { width: 100%; }
+      .hero .kicker { margin-bottom: 17px; }
+      .hero h1 { font-size: clamp(65px, 19.5vw, 92px); max-width: 6.1ch; }
+      .hero-position { margin-top: 21px; padding-left: 17px; }
+      .hero-position strong { font-size: 24px; }
+      .hero-position p { font-size: 12px; margin-top: 10px; max-width: 44ch; }
+      .hero-actions { gap: 19px; margin-top: 20px; }
+      .primary-action { min-height: 44px; padding: 0 15px; }
+      .secondary-action { font-size: 9px; }
+      .hero-meta { display: none; }
+
+      .premise { padding: 94px 0 101px; }
+      .premise-grid,
+      .section-head,
+      .perspective-grid {
+        grid-template-columns: 1fr;
+      }
+      .premise-grid { gap: 48px; }
+      .premise h2 { font-size: clamp(48px, 14vw, 66px); }
+      .premise-aside { max-width: 35rem; }
+
+      .decisions { padding: 90px 0 86px; }
+      .section-head { gap: 29px; margin-bottom: 42px; }
+      .section-head h2 { font-size: 49px; }
+      .decision-row {
+        gap: 14px;
+        grid-template-columns: 38px 1fr;
+        padding: 25px 0 28px;
+      }
+      .decision-row:hover { padding-left: 0; }
+      .decision-row h3 { font-size: 28px; }
+      .decision-row p { grid-column: 2; }
+
+      .perspective { padding: 95px 0; }
+      .perspective-grid { gap: 54px; }
+      .perspective-copy h2 { font-size: 50px; }
+      .pull-quote { margin-top: 36px; }
+
+      .principles { padding: 90px 0 92px; }
+      .principles-heading { align-items: start; flex-direction: column; gap: 25px; margin-bottom: 42px; }
+      .principles h2 { font-size: 51px; }
+      .principle {
+        gap: 13px;
+        grid-template-columns: 36px 1fr;
+        padding: 23px 0 25px;
+      }
+      .principle p { grid-column: 2; }
+
+      .contact { padding: 94px 0 100px; }
+      .contact h2 { font-size: clamp(55px, 16vw, 78px); margin-top: 35px; }
+      .contact-bottom { align-items: start; flex-direction: column; gap: 35px; margin-top: 39px; }
+      .contact-link { white-space: normal; }
+
+      .philosophy,
+      .promise,
+      .expertise,
+      .about-final { padding: 92px 0 98px; }
+      .philosophy-head,
+      .cgp-head,
+      .promise-grid,
+      .about-final-grid {
+        grid-template-columns: 1fr;
+      }
+      .philosophy-head { gap: 40px; margin-bottom: 47px; }
+      .philosophy h2 { font-size: 57px; }
+      .philosophy-intro { max-width: 34rem; }
+      .philosophy-list { grid-template-columns: 1fr; }
+      .philosophy-item,
+      .philosophy-item:nth-child(odd),
+      .philosophy-item:nth-child(even) {
+        border-right: 0;
+        min-height: auto;
+        padding: 25px 0 28px;
+      }
+      .philosophy-item h3 { font-size: 28px; }
+
+      .cgp { padding: 91px 0 88px; }
+      .cgp-head { gap: 27px; margin-bottom: 42px; }
+      .cgp h2 { font-size: 50px; }
+      .cgp-thesis {
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 23px;
+        gap: 8px;
+      }
+      .cgp-thesis span:not(:last-child)::after { content: none; }
+      .cgp-item {
+        align-items: start;
+        gap: 14px;
+        grid-template-columns: 54px 1fr;
+        padding: 25px 0 28px;
+      }
+      .cgp-item:hover { padding-left: 0; }
+      .cgp-letter { font-size: 62px; grid-row: 1 / 3; }
+      .cgp-item h3 { font-size: 34px; }
+      .cgp-item p { grid-column: 2; }
+
+      .promise-grid { gap: 47px; }
+      .promise h2 { font-size: 54px; }
+      .promise-item { gap: 13px; grid-template-columns: 35px 1fr; }
+      .promise-item h3 { font-size: 28px; }
+
+      .expertise-head {
+        align-items: start;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 43px;
+      }
+      .expertise h2 { font-size: 55px; }
+      .expertise-grid { grid-template-columns: 1fr; }
+      .expertise-item,
+      .expertise-item:nth-child(odd),
+      .expertise-item:nth-child(even) {
+        border-right: 0;
+        min-height: auto;
+        padding: 25px 0 28px;
+      }
+      .expertise-item h3 { font-size: 28px; }
+
+      .about-final-grid { gap: 49px; }
+      .about-final h2 { font-size: 51px; }
+      .about-final-copy > p:first-of-type { font-size: 23px; }
+
+      .footer-main { align-items: start; flex-direction: column; gap: 16px; }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 61px; }
+      .hero-position strong { font-size: 22px; }
+      .hero-actions { align-items: flex-start; flex-direction: column; gap: 10px; }
+      .mobile-menu a { font-size: 42px; }
+    }
+
+    /* Quiet Authority V3 — editorial image rhythm */
+    :root {
+      --section-space: clamp(30px, 2.6vw, 36px);
+      --section-space-compact: clamp(27px, 2.35vw, 33px);
+      --editorial-gap: clamp(42px, 4.8vw, 64px);
+    }
+
+    .philosophy h2,
+    .cgp h2,
+    .promise h2,
+    .principles h2,
+    .expertise h2,
+    .contact h2,
+    .about-final h2 {
+      line-height: 1.06;
+    }
+
+    .philosophy {
+      padding: var(--section-space) 0;
+    }
+    .philosophy-layout {
+      align-items: start;
+      display: grid;
+      gap: var(--editorial-gap);
+      grid-template-columns: minmax(0, 1.32fr) minmax(300px, .68fr);
+    }
+    .philosophy-content { min-width: 0; }
+    .philosophy-head {
+      display: block;
+      margin-bottom: 38px;
+    }
+    .philosophy h2 {
+      font-size: clamp(52px, 5.8vw, 82px);
+      max-width: 13ch;
+    }
+    .philosophy-intro {
+      margin-top: 26px;
+      max-width: 62ch;
+      padding-top: 18px;
+    }
+    .philosophy-list { grid-template-columns: 1fr 1fr; }
+    .philosophy-item,
+    .philosophy-item:nth-child(odd),
+    .philosophy-item:nth-child(even) {
+      min-height: 0;
+      gap: 12px;
+      grid-template-columns: 34px minmax(0, 1fr);
+      padding-bottom: 21px;
+      padding-top: 21px;
+    }
+    .philosophy-item:nth-child(odd) { padding-right: 22px; }
+    .philosophy-item:nth-child(even) { padding-left: 22px; }
+    .philosophy-item h3 {
+      font-size: clamp(25px, 2.1vw, 30px);
+      margin-bottom: 9px;
+    }
+    .philosophy-item p {
+      font-size: 14px;
+      line-height: 1.58;
+      max-width: none;
+    }
+    .philosophy-portrait {
+      aspect-ratio: 3 / 4;
+      background: #d8c4ae;
+      box-shadow: 0 30px 65px -50px rgba(21,21,18,.52);
+      margin: 0;
+      overflow: hidden;
+      position: sticky;
+      top: calc(var(--header-height) + 24px);
+    }
+    .philosophy-portrait::after {
+      background:
+        linear-gradient(90deg, rgba(242,238,230,.14), transparent 18%),
+        linear-gradient(180deg, transparent 74%, rgba(21,21,18,.07));
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+    .philosophy-portrait img {
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: center;
+      transform: none;
+      width: 100%;
+    }
+
+    .cgp {
+      padding: var(--section-space-compact) 0;
+    }
+    .cgp-layout {
+      align-items: start;
+      display: grid;
+      gap: clamp(42px, 4.7vw, 64px);
+      grid-template-columns: minmax(280px, .68fr) minmax(0, 1.32fr);
+    }
+    .cgp-portrait {
+      aspect-ratio: 4 / 5;
+      background: #030303;
+      margin: 0;
+      overflow: hidden;
+      position: sticky;
+      top: calc(var(--header-height) + 24px);
+    }
+    .cgp-portrait::after {
+      background:
+        linear-gradient(90deg, var(--ink) 0%, transparent 11%, transparent 89%, var(--ink) 100%),
+        linear-gradient(180deg, var(--ink) 0%, transparent 9%, transparent 88%, var(--ink) 100%);
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+    .cgp-portrait img {
+      filter: saturate(.9) contrast(1.035);
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+    }
+    .cgp-content { min-width: 0; }
+    .cgp-head {
+      display: block;
+      margin-bottom: 31px;
+    }
+    .cgp h2 {
+      font-size: clamp(49px, 5vw, 70px);
+      margin-top: 23px;
+      max-width: 15ch;
+    }
+    .cgp-thesis {
+      align-items: flex-start;
+      display: grid;
+      font-size: clamp(18px, 1.55vw, 22px);
+      gap: 0;
+      grid-template-columns: 1fr 1.24fr .92fr;
+      margin-bottom: 0;
+      padding: 18px 0 20px;
+    }
+    .cgp-thesis span:not(:last-child)::after { content: none; }
+    .cgp-thesis span {
+      display: block;
+      line-height: 1.25;
+      padding-right: 18px;
+      white-space: nowrap;
+    }
+    .cgp-thesis span + span {
+      border-left: 1px solid var(--line-light);
+      padding-left: 18px;
+    }
+    .cgp-item {
+      align-items: start;
+      gap: 24px;
+      grid-template-columns: 70px minmax(120px, .45fr) minmax(0, 1.2fr);
+      padding: 22px 0 24px;
+    }
+    .cgp-letter {
+      font-size: clamp(60px, 5.4vw, 79px);
+      line-height: .82;
+    }
+    .cgp-item h3 { font-size: clamp(31px, 2.8vw, 41px); }
+    .cgp-item p {
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .promise { padding: var(--section-space-compact) 0; }
+    .promise-grid {
+      gap: clamp(42px, 4.5vw, 60px);
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    }
+    .promise h2 {
+      font-size: clamp(50px, 5.8vw, 78px);
+      margin-top: 24px;
+      max-width: 14ch;
+    }
+    .promise-item {
+      gap: 14px;
+      grid-template-columns: 34px 1fr;
+      padding: 21px 0 23px;
+    }
+    .promise-item p { max-width: none; }
+
+    .principles { padding: var(--section-space-compact) 0; }
+    .principles-heading { margin-bottom: 34px; }
+    .principle { padding: 20px 0 22px; }
+
+    .expertise { padding: var(--section-space) 0; }
+    .expertise-layout {
+      align-items: start;
+      display: grid;
+      gap: var(--editorial-gap);
+      grid-template-columns: minmax(0, 1.22fr) minmax(300px, .78fr);
+    }
+    .expertise-content { min-width: 0; }
+    .expertise-head {
+      align-items: start;
+      flex-direction: column;
+      gap: 23px;
+      margin-bottom: 40px;
+    }
+    .expertise h2 {
+      font-size: clamp(50px, 5.5vw, 76px);
+      max-width: 11ch;
+    }
+    .expertise-head > p { max-width: 48ch; }
+    .expertise-grid {
+      display: block;
+    }
+    .expertise-item,
+    .expertise-item:nth-child(odd),
+    .expertise-item:nth-child(even) {
+      align-items: start;
+      border-right: 0;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 36px minmax(190px, .7fr) minmax(0, 1.3fr);
+      min-height: 0;
+      padding: 22px 0 24px;
+    }
+    .expertise-item span {
+      line-height: 1.2;
+      margin: 2px 0 0;
+    }
+    .expertise-item h3 {
+      font-size: clamp(24px, 2.2vw, 30px);
+      margin: 0;
+    }
+    .expertise-item p {
+      font-size: 14px;
+      line-height: 1.58;
+      margin: 0;
+    }
+    .expertise-portrait {
+      aspect-ratio: 4 / 5;
+      background: #c9af93;
+      box-shadow: 0 30px 65px -50px rgba(21,21,18,.48);
+      margin: 0;
+      overflow: hidden;
+      position: sticky;
+      top: calc(var(--header-height) + 24px);
+    }
+    .expertise-portrait::after {
+      background:
+        linear-gradient(90deg, rgba(248,245,239,.12), transparent 19%),
+        linear-gradient(180deg, transparent 76%, rgba(21,21,18,.06));
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+    .expertise-portrait img {
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: center;
+      transform: none;
+      width: 100%;
+    }
+
+    .contact { padding: clamp(29px, 2.5vw, 35px) 0; }
+    .contact h2 {
+      font-size: clamp(56px, 6.8vw, 92px);
+      margin-top: 31px;
+      max-width: none;
+      width: 100%;
+    }
+    .contact-paths {
+      border-bottom: 1px solid var(--line-dark);
+      display: grid;
+      gap: 0;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 44px;
+    }
+    .contact-path {
+      border-top: 1px solid var(--line-dark);
+      padding: 24px 40px 28px 0;
+    }
+    .contact-path + .contact-path {
+      border-left: 1px solid var(--line-dark);
+      padding-left: 40px;
+      padding-right: 0;
+    }
+    .contact-path-label {
+      color: var(--bronze);
+      display: block;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .contact-path h3 {
+      font-family: var(--serif);
+      font-size: clamp(29px, 2.6vw, 37px);
+      font-weight: 400;
+      letter-spacing: -.025em;
+      line-height: 1.05;
+      margin: 0;
+    }
+    .contact-path p {
+      color: var(--muted);
+      margin: 17px 0 0;
+      max-width: 51ch;
+    }
+    .contact-path .contact-link {
+      display: inline-block;
+      font-size: clamp(22px, 2vw, 29px);
+      margin-top: 25px;
+    }
+    .contact-discretion {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .08em;
+      margin: 20px 0 0;
+      text-transform: uppercase;
+    }
+
+    .about-final { padding: var(--section-space-compact) 0; }
+    .about-final-grid {
+      gap: clamp(42px, 4.5vw, 60px);
+      grid-template-columns: minmax(220px, .54fr) minmax(0, 1.46fr);
+    }
+    .about-portrait {
+      aspect-ratio: 1;
+      border: 1px solid rgba(180,151,117,.68);
+      border-radius: 50%;
+      box-shadow: 0 24px 60px -38px rgba(0,0,0,.95);
+      margin: 25px 0 0;
+      max-width: 220px;
+      overflow: hidden;
+      width: 100%;
+    }
+    .about-portrait img {
+      filter: contrast(1.04);
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 42%;
+      width: 100%;
+    }
+    .about-final h2 {
+      font-size: clamp(48px, 5.2vw, 72px);
+      max-width: none;
+    }
+    .about-title-line {
+      display: block;
+      white-space: nowrap;
+    }
+    .about-final-copy > p {
+      margin-top: 20px;
+      max-width: 72ch;
+    }
+    .about-links {
+      border-bottom: 1px solid var(--line-light);
+      border-top: 1px solid var(--line-light);
+      display: grid;
+      gap: 0;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      margin-top: 30px;
+    }
+    .about-links a {
+      align-items: center;
+      border-bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      min-height: 54px;
+      padding: 0 14px;
+    }
+    .about-links a + a { border-left: 1px solid var(--line-light); }
+    .about-links a::after {
+      content: "↗";
+      font-size: 13px;
+      opacity: .58;
+    }
+    .footer { padding: 26px 0 24px; }
+    .footer-links {
+      flex-wrap: wrap;
+      gap: 12px 22px;
+      justify-content: flex-end;
+    }
+
+    /* Quiet Authority lead capture */
+    body.lead-open { overflow: hidden; }
+    [data-lead-intent] { cursor: pointer; }
+
+    .contact-path {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-path .contact-link {
+      align-self: flex-start;
+      background: transparent;
+      border-left: 0;
+      border-right: 0;
+      border-top: 0;
+      color: inherit;
+      cursor: pointer;
+      font-family: var(--serif);
+      margin-top: auto;
+      padding: 25px 0 7px;
+    }
+
+    .cgp-action {
+      align-items: end;
+      border-top: 1px solid var(--line-light);
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      padding-top: 22px;
+    }
+    .cgp-action p {
+      color: rgba(248,245,239,.48);
+      font-size: 10px;
+      letter-spacing: .12em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .cgp-action-link {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid rgba(248,245,239,.46);
+      color: var(--paper-bright);
+      cursor: pointer;
+      font-family: var(--serif);
+      font-size: clamp(25px, 2.2vw, 32px);
+      letter-spacing: -.025em;
+      line-height: 1.1;
+      padding: 0 0 6px;
+      transition: border-color .2s ease, color .2s ease;
+    }
+    .cgp-action-link:hover {
+      border-color: var(--bronze-light);
+      color: var(--bronze-light);
+    }
+
+    .lead-dialog {
+      background: transparent;
+      border: 0;
+      color: var(--ink);
+      max-height: min(90svh, 820px);
+      max-width: 920px;
+      overflow: visible;
+      padding: 0;
+      width: min(920px, calc(100% - 48px));
+    }
+    .lead-dialog::backdrop {
+      backdrop-filter: blur(9px);
+      background: rgba(13,13,11,.78);
+    }
+    .lead-dialog[open] { animation: lead-dialog-in .38s var(--ease) both; }
+    @keyframes lead-dialog-in {
+      from { opacity: 0; transform: translateY(18px) scale(.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .lead-dialog-shell {
+      background: var(--paper-bright);
+      box-shadow: 0 36px 100px rgba(0,0,0,.36);
+      display: grid;
+      grid-template-columns: minmax(250px, .75fr) minmax(0, 1.25fr);
+      max-height: min(90svh, 820px);
+      overflow: auto;
+      position: relative;
+    }
+    .lead-dialog-context {
+      background: var(--ink-soft);
+      color: var(--paper-bright);
+      display: flex;
+      flex-direction: column;
+      min-height: 650px;
+      padding: 54px 44px 42px;
+    }
+    .lead-dialog-context .kicker { color: var(--bronze-light); }
+    .lead-dialog-context h2 {
+      font-size: clamp(46px, 4.6vw, 65px);
+      line-height: 1.02;
+      margin: 50px 0 0;
+      max-width: 8ch;
+    }
+    .lead-dialog-context h2:focus { outline: 0; }
+    .lead-dialog[data-lead-mode="introduction"] .lead-dialog-context h2 {
+      font-size: clamp(43px, 4vw, 56px);
+      max-width: 9ch;
+    }
+    .lead-dialog-context > p:not(.kicker):not(.lead-dialog-discretion) {
+      color: rgba(248,245,239,.62);
+      font-size: 13px;
+      margin: 25px 0 0;
+      max-width: 32ch;
+    }
+    .lead-dialog-discretion {
+      border-top: 1px solid var(--line-light);
+      color: rgba(248,245,239,.48);
+      font-size: 9px;
+      letter-spacing: .11em;
+      margin: auto 0 0;
+      padding-top: 20px;
+      text-transform: uppercase;
+    }
+    .lead-dialog-close {
+      align-items: center;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      display: flex;
+      font-size: 9px;
+      font-weight: 600;
+      gap: 9px;
+      letter-spacing: .14em;
+      min-height: 44px;
+      padding: 10px 14px;
+      position: absolute;
+      right: 16px;
+      text-transform: uppercase;
+      top: 12px;
+      z-index: 2;
+    }
+    .lead-dialog-close::after {
+      content: "×";
+      font-family: var(--serif);
+      font-size: 25px;
+      font-weight: 300;
+      line-height: 1;
+    }
+    .lead-form { padding: 64px 48px 42px; }
+    .lead-form-body[hidden],
+    .lead-success[hidden],
+    [data-lead-mode][hidden],
+    #lead-form-result[hidden] { display: none; }
+    .lead-fields {
+      display: grid;
+      gap: 22px 24px;
+      grid-template-columns: 1fr 1fr;
+    }
+    .lead-field { display: block; }
+    .lead-field.is-wide { grid-column: 1 / -1; }
+    .lead-field span {
+      display: block;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .13em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .lead-field small {
+      color: var(--muted);
+      display: block;
+      font-size: 10px;
+      margin-top: 7px;
+    }
+    .lead-field input,
+    .lead-field textarea {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--line-dark);
+      border-radius: 0;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.5;
+      outline: 0;
+      padding: 8px 0 11px;
+      resize: vertical;
+      width: 100%;
+    }
+    .lead-field textarea { min-height: 88px; }
+    .lead-field input:focus,
+    .lead-field textarea:focus {
+      border-color: var(--bronze);
+      box-shadow: 0 1px 0 var(--bronze);
+    }
+    .lead-mode-fields { margin-top: 25px; }
+    .lead-privacy {
+      border-top: 1px solid var(--line-dark);
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+      margin: 28px 0 0;
+      padding-top: 17px;
+    }
+    .lead-submit-row {
+      align-items: center;
+      display: flex;
+      gap: 18px;
+      justify-content: space-between;
+      margin-top: 24px;
+    }
+    .lead-submit {
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      color: var(--paper-bright);
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      min-height: 46px;
+      padding: 0 20px;
+      text-transform: uppercase;
+      transition: background-color .2s ease, border-color .2s ease;
+    }
+    .lead-submit:hover { background: var(--bronze); border-color: var(--bronze); }
+    .lead-submit:disabled { cursor: wait; opacity: .55; }
+    #lead-form-result {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+      margin: 0;
+      text-align: right;
+    }
+    #lead-form-result.is-error { color: #81523f; }
+    #lead-form-result a { border-bottom: 1px solid currentColor; }
+    .lead-honeypot {
+      height: 1px;
+      left: -10000px;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      width: 1px;
+    }
+    .lead-success {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 500px;
+    }
+    .lead-success .kicker { color: var(--bronze); }
+    .lead-success h3 {
+      font-family: var(--serif);
+      font-size: clamp(45px, 5vw, 68px);
+      font-weight: 400;
+      letter-spacing: -.035em;
+      line-height: 1.02;
+      margin: 34px 0 0;
+      max-width: 9ch;
+    }
+    .lead-success p { color: var(--muted); margin: 22px 0 0; max-width: 38ch; }
+    .lead-success button {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--ink);
+      cursor: pointer;
+      font-family: var(--serif);
+      font-size: 23px;
+      margin-top: 36px;
+      padding: 0 0 5px;
+    }
+
+    @media (max-width: 1040px) {
+      .philosophy-layout,
+      .expertise-layout {
+        gap: 46px;
+        grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+      }
+      .philosophy-list { grid-template-columns: 1fr; }
+      .philosophy-item,
+      .philosophy-item:nth-child(odd),
+      .philosophy-item:nth-child(even) {
+        border-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .cgp-layout {
+        gap: 46px;
+        grid-template-columns: minmax(270px, .75fr) minmax(0, 1.25fr);
+      }
+      .cgp-thesis {
+        gap: 7px;
+        grid-template-columns: 1fr;
+      }
+      .cgp-thesis span,
+      .cgp-thesis span + span {
+        border-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        white-space: nowrap;
+      }
+      .cgp-item {
+        gap: 16px;
+        grid-template-columns: 56px 1fr;
+      }
+      .cgp-item p { grid-column: 2; }
+      .expertise-item,
+      .expertise-item:nth-child(odd),
+      .expertise-item:nth-child(even) {
+        grid-template-columns: 32px 1fr;
+      }
+      .expertise-item p { grid-column: 2; }
+    }
+
+    @media (max-width: 720px) {
+      :root {
+        --section-space: 27px;
+        --section-space-compact: 25px;
+      }
+      .philosophy-layout,
+      .cgp-layout,
+      .expertise-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .philosophy-content,
+      .cgp-content,
+      .expertise-content { width: 100%; }
+      .philosophy-portrait,
+      .cgp-portrait,
+      .expertise-portrait {
+        position: relative;
+        top: auto;
+        width: 100%;
+      }
+      .philosophy-portrait {
+        aspect-ratio: 3 / 4;
+        order: -1;
+      }
+      .philosophy-portrait img {
+        object-position: center;
+        transform: none;
+      }
+      .philosophy-head { margin-bottom: 30px; }
+      .philosophy h2 { font-size: clamp(48px, 14vw, 58px); }
+      .philosophy-intro { margin-top: 23px; }
+
+      .cgp-portrait {
+        aspect-ratio: 4 / 5;
+        order: -1;
+      }
+      .cgp-head { margin-bottom: 27px; }
+      .cgp h2 { font-size: clamp(47px, 13vw, 55px); }
+      .cgp-item {
+        gap: 13px;
+        grid-template-columns: 48px 1fr;
+      }
+      .cgp-letter { font-size: 57px; }
+
+      .promise-grid {
+        gap: 32px;
+        grid-template-columns: 1fr;
+      }
+      .promise h2 { font-size: clamp(47px, 13.5vw, 56px); }
+
+      .principles-heading { margin-bottom: 27px; }
+
+      .expertise-layout { gap: 36px; }
+      .expertise-content { display: contents; }
+      .expertise-head {
+        margin-bottom: 0;
+        order: 1;
+      }
+      .expertise-grid {
+        order: 3;
+        width: 100%;
+      }
+      .expertise h2 { font-size: clamp(48px, 13vw, 56px); }
+      .expertise-portrait {
+        aspect-ratio: 4 / 5;
+        margin-top: 2px;
+        order: 2;
+      }
+      .expertise-portrait img {
+        object-position: center;
+        transform: none;
+      }
+      .expertise-item,
+      .expertise-item:nth-child(odd),
+      .expertise-item:nth-child(even) {
+        gap: 13px;
+        grid-template-columns: 31px 1fr;
+        padding: 21px 0 23px;
+      }
+      .expertise-item h3 { font-size: 27px; }
+
+      .contact { padding: 27px 0 29px; }
+      .contact h2 {
+        font-size: clamp(50px, 14vw, 59px);
+        margin-top: 28px;
+      }
+      .contact-paths {
+        grid-template-columns: 1fr;
+        margin-top: 34px;
+      }
+      .contact-path,
+      .contact-path + .contact-path {
+        border-left: 0;
+        display: block;
+        padding: 22px 0 25px;
+      }
+      .contact-path .contact-link {
+        margin-top: 25px;
+        padding-top: 0;
+        white-space: normal;
+      }
+      .about-final-grid {
+        gap: 35px;
+        grid-template-columns: 1fr;
+      }
+      .about-portrait {
+        margin-top: 22px;
+        max-width: 168px;
+      }
+      .about-final h2 {
+        font-size: clamp(31px, 8.2vw, 36px);
+        letter-spacing: -.045em;
+      }
+      .about-final-copy > p { margin-top: 18px; }
+      .about-links { grid-template-columns: 1fr 1fr; }
+      .about-links a + a { border-left: 0; }
+      .about-links a:nth-child(even) { border-left: 1px solid var(--line-light); }
+      .about-links a:nth-child(n + 3) { border-top: 1px solid var(--line-light); }
+      .footer { padding: 24px 0 22px; }
+      .footer-links { justify-content: flex-start; }
+      .cgp-action {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+      }
+      .lead-dialog {
+        height: 100svh;
+        max-height: none;
+        width: 100%;
+      }
+      .lead-dialog-shell {
+        display: block;
+        height: 100%;
+        max-height: none;
+      }
+      .lead-dialog-context {
+        min-height: 0;
+        padding: 36px 20px 27px;
+      }
+      .lead-dialog-context h2 {
+        font-size: clamp(43px, 12vw, 53px);
+        margin-top: 34px;
+        max-width: 10ch;
+      }
+      .lead-dialog-context > p:not(.kicker):not(.lead-dialog-discretion) { margin-top: 17px; }
+      .lead-dialog-discretion { display: none; }
+      .lead-dialog-close {
+        color: var(--paper-bright);
+        right: 8px;
+        top: 7px;
+      }
+      .lead-form { padding: 32px 20px 34px; }
+      .lead-fields { grid-template-columns: 1fr; }
+      .lead-field.is-wide { grid-column: auto; }
+      .lead-success { min-height: 380px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+      [data-reveal],
+      .hero [data-hero] { opacity: 1; transform: none; }
+      .hero-portrait img { transform: scale(1.025); }
+      .philosophy-portrait,
+      .cgp-portrait,
+      .expertise-portrait { position: relative; top: auto; }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Aabhishek Siloya",
+      "jobTitle": "Founder",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/aabhisheksiloya/"
+      ],
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Bhuzen",
+          "url": "https://www.bhuzen.com"
+        },
+        {
+          "@type": "Organization",
+          "name": "VaxGuard"
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-od-id="site-header">
+    <div class="shell header-inner">
+      <a class="mark" href="#home" aria-label="Aabhishek Siloya — back to top">AS <span>Aabhishek Siloya</span></a>
+      <nav aria-label="Primary navigation">
+        <ul class="desktop-nav">
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#cgp">CGP</a></li>
+          <li><a href="#promise">Promise</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+  <aside class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true" inert>
+    <nav>
+      <ul>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#cgp">The CGP System</a></li>
+        <li><a href="#promise">My Promise</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="mobile-note">Founder · Strategic partner · London</p>
+  </aside>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title" data-od-id="hero">
+      <figure class="hero-portrait" aria-hidden="true">
+        <img src="assets/aabhishek-black-white-side-profile.png" alt="" width="896" height="1195">
+      </figure>
+      <div class="shell hero-content">
+        <div class="hero-copy">
+          <p class="kicker" data-hero="1">Founder · Strategic partner · London</p>
+          <h1 class="serif" id="hero-title" data-hero="2"><span>Aabhishek</span><span>Siloya</span></h1>
+          <div class="hero-position" data-hero="3">
+            <strong>For the decisions that shape what comes next.</strong>
+            <p>Strategic counsel for founders, owners and families navigating growth, leadership transition and continuity.</p>
+          </div>
+          <div class="hero-actions" data-hero="4">
+            <button class="primary-action" type="button" data-lead-intent="hero">Discuss a decision</button>
+            <a class="secondary-action" href="#philosophy">Read my philosophy</a>
+          </div>
+        </div>
+        <span class="hero-meta" aria-hidden="true">Private perspective · 2026</span>
+      </div>
+    </section>
+
+    <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title" data-od-id="philosophy">
+      <div class="shell philosophy-layout">
+        <div class="philosophy-content">
+          <div class="philosophy-head">
+            <div data-reveal>
+              <p class="kicker">My philosophy</p>
+              <h2 class="serif" id="philosophy-title">The standard is revealed in the decisions no one applauds.</h2>
+            </div>
+            <p class="philosophy-intro" data-reveal>Businesses of consequence are built in the quiet disciplines: judgment, integrity, cultural intelligence and the willingness to refine what already works.</p>
+          </div>
+          <div class="philosophy-list">
+            <article class="philosophy-item" data-reveal>
+              <span class="philosophy-no">01</span>
+              <div><h3>Earn distinction</h3><p>Distinction is not a claim. It is the standard applied consistently, especially when the easier choice would pass unnoticed.</p></div>
+            </article>
+            <article class="philosophy-item" data-reveal>
+              <span class="philosophy-no">02</span>
+              <div><h3>Respect the subtle</h3><p>Culture, judgment and habit shape outcomes long before they appear in the accounts.</p></div>
+            </article>
+            <article class="philosophy-item" data-reveal>
+              <span class="philosophy-no">03</span>
+              <div><h3>Lead with integrity</h3><p>A decision is only valuable when its consequences can be explained, accepted and owned.</p></div>
+            </article>
+            <article class="philosophy-item" data-reveal>
+              <span class="philosophy-no">04</span>
+              <div><h3>Think beyond borders</h3><p>Ambition may be global. Judgment must remain alert to context, culture and the people who carry the work.</p></div>
+            </article>
+            <article class="philosophy-item" data-reveal>
+              <span class="philosophy-no">05</span>
+              <div><h3>Build for continuity</h3><p>Growth matters. The stronger test is whether capability, value and responsibility can endure beyond the present owner.</p></div>
+            </article>
+            <article class="philosophy-item" data-reveal>
+              <span class="philosophy-no">06</span>
+              <div><h3>Refine relentlessly</h3><p>Better businesses are built through disciplined correction, not perpetual reinvention.</p></div>
+            </article>
+          </div>
+        </div>
+        <figure class="philosophy-portrait" data-reveal>
+          <img src="assets/aabhishek-premium-long-shot-2.jpg" alt="Aabhishek Siloya standing in a warm, neutral studio." width="1280" height="1600" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="cgp" id="cgp" aria-labelledby="cgp-title" data-od-id="cgp">
+      <div class="shell cgp-layout">
+        <figure class="cgp-portrait" data-reveal>
+          <img src="assets/aabhishek-thinking-pose-2.jpg" alt="Aabhishek Siloya in a thoughtful, hands-clasped portrait." width="1289" height="1600" loading="lazy" decoding="async">
+        </figure>
+        <div class="cgp-content">
+          <div class="cgp-head" data-reveal>
+            <p class="kicker">The CGP System</p>
+            <h2 class="serif" id="cgp-title">At the decisions that alter the shape of the business.</h2>
+          </div>
+          <div class="cgp-thesis" data-reveal aria-label="Clarity precedes growth. Growth must become profit. Profit creates choice.">
+            <span>Clarity precedes growth</span>
+            <span>Growth must become profit</span>
+            <span>Profit creates choice</span>
+          </div>
+          <div class="cgp-list">
+            <article class="cgp-item" data-reveal>
+              <span class="cgp-letter" aria-hidden="true">C</span>
+              <h3>Clarity</h3>
+              <p>Name the decision. Strip away noise. Establish what matters, what can wait and what will not be compromised.</p>
+            </article>
+            <article class="cgp-item" data-reveal>
+              <span class="cgp-letter" aria-hidden="true">G</span>
+              <h3>Growth</h3>
+              <p>Choose where ambition deserves capital, leadership attention and organisational capacity.</p>
+            </article>
+            <article class="cgp-item" data-reveal>
+              <span class="cgp-letter" aria-hidden="true">P</span>
+              <h3>Profit</h3>
+              <p>Convert momentum into durable economic value, resilience and the freedom to act on your own terms.</p>
+            </article>
+          </div>
+          <div class="cgp-action" data-reveal>
+            <p>A private first exchange.</p>
+            <button class="cgp-action-link" type="button" data-lead-intent="cgp">Begin with clarity</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise" id="promise" aria-labelledby="promise-title" data-od-id="promise">
+      <div class="shell promise-grid">
+        <div data-reveal>
+          <p class="kicker">My promise</p>
+          <h2 class="serif" id="promise-title">Advice should respect the weight of ownership.</h2>
+        </div>
+        <div class="promise-list">
+          <article class="promise-item" data-reveal>
+            <div><h3>I will speak plainly.</h3><p>You will know what I believe, what I question and where uncertainty remains.</p></div>
+          </article>
+          <article class="promise-item" data-reveal>
+            <div><h3>I will protect the room.</h3><p>Discretion is not a service feature. It is the condition for honest work.</p></div>
+          </article>
+          <article class="promise-item" data-reveal>
+            <div><h3>I will strengthen ownership.</h3><p>The work should sharpen judgment and leave the business more capable, not create dependence on advice.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles" aria-labelledby="principles-title" data-od-id="working-principles">
+      <div class="shell">
+        <div class="principles-heading" data-reveal>
+          <div>
+            <p class="kicker">How I work</p>
+            <h2 class="serif" id="principles-title">Clarity without theatre.</h2>
+          </div>
+          <p>The manner of the work matters as much as the conclusion. Context is respected, trade-offs are made visible and deliberation ends in action.</p>
+        </div>
+        <div class="principle-list">
+          <article class="principle" data-reveal>
+            <h3>Context before prescription</h3>
+            <p>Every enterprise carries its own history, family dynamics, appetite for risk and definition of enough.</p>
+          </article>
+          <article class="principle" data-reveal>
+            <h3>Stewardship across horizons</h3>
+            <p>The immediate result matters. So do control, reputation, relationships and what remains possible afterwards.</p>
+          </article>
+          <article class="principle" data-reveal>
+            <h3>Deliberation that ends in action</h3>
+            <p>The room is for thinking clearly. The outcome must be a decision that people can understand and carry.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="expertise" id="expertise" aria-labelledby="expertise-title" data-od-id="expertise">
+      <div class="shell expertise-layout">
+        <div class="expertise-content">
+          <div class="expertise-head" data-reveal>
+            <div>
+              <p class="kicker">Expertise</p>
+              <h2 class="serif" id="expertise-title">Where perspective becomes useful.</h2>
+            </div>
+            <p>The work is shaped around the decision, not forced into a consulting package.</p>
+          </div>
+          <div class="expertise-grid">
+            <article class="expertise-item" data-reveal><span>01</span><h3>Founder &amp; Executive Counsel</h3><p>A private thinking partnership for owners carrying decisions that cannot simply be delegated.</p></article>
+            <article class="expertise-item" data-reveal><span>02</span><h3>Strategic Advisory</h3><p>Direction on growth, transformation and choices that materially reshape the enterprise.</p></article>
+            <article class="expertise-item" data-reveal><span>03</span><h3>Culture &amp; Leadership</h3><p>Standards, accountability and leadership behaviour that make quality repeatable.</p></article>
+            <article class="expertise-item" data-reveal><span>04</span><h3>Ownership &amp; Decision Rights</h3><p>Clarifying who decides, who advises and how accountability moves between owners and leadership.</p></article>
+            <article class="expertise-item" data-reveal><span>05</span><h3>Legacy &amp; Continuity</h3><p>Preparing the business for succession, transition and responsibility beyond the founder.</p></article>
+            <article class="expertise-item" data-reveal><span>06</span><h3>Growth &amp; Market Expansion</h3><p>Assessing where expansion deserves capital, leadership attention and local adaptation.</p></article>
+          </div>
+        </div>
+        <figure class="expertise-portrait" data-reveal>
+          <img src="assets/aabhishek-premium-close-up-2.jpg" alt="Aabhishek Siloya in a warm, close-up studio portrait." width="1289" height="1600" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title" data-od-id="contact">
+      <div class="shell contact-frame" data-reveal>
+        <p class="kicker">A private conversation</p>
+        <h2 class="serif" id="contact-title">Begin with the decision. Or make a considered introduction.</h2>
+        <div class="contact-paths">
+          <article class="contact-path">
+            <span class="contact-path-label">For founders, owners and families</span>
+            <h3>Request a private conversation.</h3>
+            <p>If you are carrying a live decision around growth, leadership transition or continuity, send a short note. Context is enough; no deck is required.</p>
+            <button class="contact-link" type="button" data-lead-intent="conversation">Request a conversation</button>
+          </article>
+          <article class="contact-path">
+            <span class="contact-path-label">For trusted introductions</span>
+            <h3>Introduce someone who should be in the room.</h3>
+            <p>If someone in your circle would value this kind of counsel, a brief private introduction is welcome. The context and the relationship will be treated with care.</p>
+            <button class="contact-link" type="button" data-lead-intent="introduction">Make an introduction</button>
+          </article>
+        </div>
+        <p class="contact-discretion">Direct correspondence · Confidential by default · A response from Aabhishek</p>
+      </div>
+    </section>
+
+    <section class="about-final" id="about" aria-labelledby="about-title" data-od-id="about">
+      <div class="shell about-final-grid">
+        <aside data-reveal>
+          <p class="kicker">About me</p>
+          <figure class="about-portrait">
+            <img src="assets/aabhishek-sunglasses-upward-gaze-front.jpg" alt="Aabhishek Siloya wearing sunglasses and looking upward." width="896" height="1200" loading="lazy" decoding="async">
+          </figure>
+          <div class="about-signature">
+            <strong>Aabhishek Siloya</strong>
+            <span>Founder of Bhuzen and VaxGuard · London</span>
+          </div>
+        </aside>
+        <div class="about-final-copy" data-reveal>
+          <h2 class="serif" id="about-title"><span class="about-title-line">The Architect of</span><span class="about-title-line">Extraordinary Outcomes</span></h2>
+          <p>I am Aabhishek Siloya — a global business strategist and coach dedicated to cultivating excellence in leadership, refining organizational culture, and transforming vision into legacy.</p>
+          <p>With a foundation built on timeless principles of discipline, integrity, and strategic foresight, I work with discerning leaders and organizations who seek not just growth, but distinction.</p>
+          <p>My approach transcends conventional consulting — it is an art form. Every engagement is curated with precision, every insight delivered with clarity, every relationship forged with mutual respect and shared purpose.</p>
+          <div class="about-links">
+            <a href="https://www.linkedin.com/in/aabhisheksiloya/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.bhuzen.com" target="_blank" rel="noreferrer">Bhuzen</a>
+            <a href="https://vaxguard.app" target="_blank" rel="noreferrer">VaxGuard</a>
+            <a href="https://abhisheksiloiya.github.io/private-family-office-waitlist/" target="_blank" rel="noreferrer">Wealth Management</a>
+            <a href="https://abhisheksiloiya.github.io/Editorial/" target="_blank" rel="noreferrer">Editorial</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lead-dialog" id="lead-dialog" aria-labelledby="lead-dialog-title" aria-describedby="lead-dialog-description">
+    <div class="lead-dialog-shell">
+      <button class="lead-dialog-close" type="button" data-lead-close aria-label="Close private enquiry form">Close</button>
+      <div class="lead-dialog-context">
+        <p class="kicker" id="lead-dialog-label">A private conversation</p>
+        <h2 class="serif" id="lead-dialog-title" tabindex="-1">Begin with the decision.</h2>
+        <p id="lead-dialog-description">Share only the context needed to begin. No deck is required.</p>
+        <p class="lead-dialog-discretion">Direct correspondence · Confidential by default · A response from Aabhishek</p>
+      </div>
+      <form class="lead-form" id="lead-form" method="post">
+        <input type="hidden" name="access_key" value="a5ea9083-264a-492f-8bdb-df7062eb33d5">
+        <input type="hidden" name="subject" value="A private conversation — Aabhishek Siloya">
+        <input type="hidden" name="from_name" value="Aabhishek Siloya — Quiet Authority">
+        <input type="hidden" name="intent" value="conversation">
+        <input type="hidden" name="page_url" value="">
+        <input class="lead-honeypot" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="lead-form-body">
+          <div class="lead-fields">
+            <label class="lead-field"><span>Name *</span><input type="text" name="name" autocomplete="name" required></label>
+            <label class="lead-field"><span>Email *</span><input type="email" name="email" autocomplete="email" required></label>
+          </div>
+          <div class="lead-mode-fields" data-lead-mode="conversation">
+            <div class="lead-fields">
+              <label class="lead-field"><span>Organisation or family enterprise</span><input type="text" name="organisation" autocomplete="organization"></label>
+              <label class="lead-field"><span>Telephone</span><input type="tel" name="phone" autocomplete="tel"></label>
+              <label class="lead-field is-wide"><span>What decision are you carrying? *</span><textarea name="decision" required></textarea><small>Context is enough. Please do not include confidential financial, legal or medical information.</small></label>
+            </div>
+          </div>
+          <div class="lead-mode-fields" data-lead-mode="introduction" hidden>
+            <div class="lead-fields">
+              <label class="lead-field is-wide"><span>Who do you have in mind? *</span><input type="text" name="introduced_person" required disabled></label>
+              <label class="lead-field is-wide"><span>Why might the conversation be valuable? *</span><textarea name="introduction_context" required disabled></textarea><small>Please do not include private contact details or sensitive information about the person being introduced.</small></label>
+            </div>
+          </div>
+          <p class="lead-privacy">Your details will be used only to review and respond to this enquiry. They will not be added to a marketing list.</p>
+          <div class="lead-submit-row">
+            <button class="lead-submit" type="submit">Send privately</button>
+            <p id="lead-form-result" role="status" aria-live="polite" hidden></p>
+          </div>
+        </div>
+        <div class="lead-success" hidden>
+          <p class="kicker">Message received</p>
+          <h3>Thank you. Aabhishek will review this personally.</h3>
+          <p>If there is a natural basis for a conversation, you will hear directly from Aabhishek.</p>
+          <button type="button" data-lead-close>Return to the page</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-main">
+        <span>© <span id="year">2026</span> Aabhishek Siloya</span>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="https://www.linkedin.com/in/aabhisheksiloya/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.bhuzen.com" target="_blank" rel="noreferrer">Bhuzen</a>
+          <a href="https://vaxguard.app" target="_blank" rel="noreferrer">VaxGuard</a>
+          <a href="https://abhisheksiloiya.github.io/private-family-office-waitlist/" target="_blank" rel="noreferrer">Wealth Management</a>
+          <a href="https://abhisheksiloiya.github.io/Editorial/" target="_blank" rel="noreferrer">Editorial</a>
+          <a href="#home">Back to top</a>
+        </nav>
+      </div>
+      <p class="footer-disclaimer">Strategic and operating perspective only. No investment, tax or legal advice is provided.</p>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const header = document.querySelector('.site-header');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileLinks = [...mobileMenu.querySelectorAll('a')];
+    const portrait = document.querySelector('.hero-portrait');
+
+    const setMenu = (open) => {
+      body.classList.toggle('menu-open', open);
+      mobileMenu.classList.toggle('open', open);
+      mobileMenu.toggleAttribute('inert', !open);
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.textContent = open ? 'Close' : 'Menu';
+      if (open) {
+        mobileLinks[0].focus();
+      } else if (document.activeElement && mobileMenu.contains(document.activeElement)) {
+        menuToggle.focus();
+      }
+    };
+
+    menuToggle.addEventListener('click', () => {
+      setMenu(!mobileMenu.classList.contains('open'));
+    });
+    mobileLinks.forEach((link) => link.addEventListener('click', () => setMenu(false)));
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && mobileMenu.classList.contains('open')) setMenu(false);
+    });
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      header.classList.toggle('scrolled', scrollY > 28);
+      if (!reduceMotion && scrollY < window.innerHeight) {
+        portrait.style.setProperty('--portrait-shift', `${Math.min(scrollY * .055, 30)}px`);
+      }
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const revealItems = document.querySelectorAll('[data-reveal]');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12, rootMargin: '0px 0px -5% 0px' });
+      revealItems.forEach((item) => observer.observe(item));
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.addEventListener('load', () => body.classList.add('loaded'));
+  </script>
+  <script type="module" src="assets/lead-form.mjs"></script>
+</body>
+</html>
