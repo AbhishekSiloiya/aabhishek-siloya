@@ -23,11 +23,25 @@
   <link rel="canonical" href="https://aabhisheksiloya.com/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/manrope-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/newsreader-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
   <title>Aabhishek Siloya — Founder and Strategic Partner</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&amp;display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-display: swap;
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 400 600;
+      src: url("assets/manrope-latin-variable.woff2") format("woff2");
+    }
+    @font-face {
+      font-display: swap;
+      font-family: "Newsreader";
+      font-style: normal;
+      font-weight: 300 500;
+      src: url("assets/newsreader-latin-variable.woff2") format("woff2");
+    }
+
     :root {
       --ink: #151512;
       --ink-soft: #25241f;
@@ -792,7 +806,7 @@
     .footer-links a:hover { opacity: 1; }
     .footer-disclaimer {
       border-top: 1px solid var(--line-light);
-      color: rgba(248,245,239,.43);
+      color: rgba(248,245,239,.58);
       font-size: 9px;
       letter-spacing: .05em;
       margin: 25px 0 0;
@@ -1845,7 +1859,10 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://aabhisheksiloya.com/#person",
       "name": "Aabhishek Siloya",
+      "url": "https://aabhisheksiloya.com/",
+      "image": "https://aabhisheksiloya.com/assets/aabhishek-black-white-side-profile.jpg",
       "jobTitle": "Founder",
       "address": {
         "@type": "PostalAddress",
@@ -1863,7 +1880,8 @@
         },
         {
           "@type": "Organization",
-          "name": "VaxGuard"
+          "name": "VaxGuard",
+          "url": "https://vaxguard.app"
         }
       ]
     }
@@ -1874,7 +1892,7 @@
 
   <header class="site-header" data-od-id="site-header">
     <div class="shell header-inner">
-      <a class="mark" href="#home" aria-label="Aabhishek Siloya — back to top">AS <span>Aabhishek Siloya</span></a>
+      <a class="mark" href="#home">AS <span>Aabhishek Siloya</span></a>
       <nav aria-label="Primary navigation">
         <ul class="desktop-nav">
           <li><a href="#philosophy">Philosophy</a></li>
@@ -1906,7 +1924,7 @@
   <main id="main">
     <section class="hero" id="home" aria-labelledby="hero-title" data-od-id="hero">
       <figure class="hero-portrait" aria-hidden="true">
-        <img src="assets/aabhishek-black-white-side-profile.png" alt="" width="896" height="1195">
+        <img src="assets/aabhishek-black-white-side-profile.webp" srcset="assets/aabhishek-black-white-side-profile-768.webp 768w, assets/aabhishek-black-white-side-profile.webp 896w" sizes="(max-width: 700px) 100vw, 53vw" alt="" width="896" height="1195" fetchpriority="high" decoding="async">
       </figure>
       <div class="shell hero-content">
         <div class="hero-copy">
@@ -1963,7 +1981,7 @@
           </div>
         </div>
         <figure class="philosophy-portrait" data-reveal>
-          <img src="assets/aabhishek-premium-long-shot-2.jpg" alt="Aabhishek Siloya standing in a warm, neutral studio." width="1280" height="1600" loading="lazy" decoding="async">
+          <img src="assets/aabhishek-premium-long-shot-2.webp" srcset="assets/aabhishek-premium-long-shot-2-720.webp 720w, assets/aabhishek-premium-long-shot-2.webp 1280w" sizes="(max-width: 700px) calc(100vw - 40px), 46vw" alt="Aabhishek Siloya standing in a warm, neutral studio." width="1280" height="1600" loading="lazy" decoding="async">
         </figure>
       </div>
     </section>
@@ -1971,7 +1989,7 @@
     <section class="cgp" id="cgp" aria-labelledby="cgp-title" data-od-id="cgp">
       <div class="shell cgp-layout">
         <figure class="cgp-portrait" data-reveal>
-          <img src="assets/aabhishek-thinking-pose-2.jpg" alt="Aabhishek Siloya in a thoughtful, hands-clasped portrait." width="1289" height="1600" loading="lazy" decoding="async">
+          <img src="assets/aabhishek-thinking-pose-2.webp" srcset="assets/aabhishek-thinking-pose-2-720.webp 720w, assets/aabhishek-thinking-pose-2.webp 1289w" sizes="(max-width: 700px) calc(100vw - 40px), 46vw" alt="Aabhishek Siloya in a thoughtful, hands-clasped portrait." width="1289" height="1600" loading="lazy" decoding="async">
         </figure>
         <div class="cgp-content">
           <div class="cgp-head" data-reveal>
@@ -2074,7 +2092,7 @@
           </div>
         </div>
         <figure class="expertise-portrait" data-reveal>
-          <img src="assets/aabhishek-premium-close-up-2.jpg" alt="Aabhishek Siloya in a warm, close-up studio portrait." width="1289" height="1600" loading="lazy" decoding="async">
+          <img src="assets/aabhishek-premium-close-up-2.webp" srcset="assets/aabhishek-premium-close-up-2-720.webp 720w, assets/aabhishek-premium-close-up-2.webp 1289w" sizes="(max-width: 700px) calc(100vw - 40px), 46vw" alt="Aabhishek Siloya in a warm, close-up studio portrait." width="1289" height="1600" loading="lazy" decoding="async">
         </figure>
       </div>
     </section>
@@ -2106,7 +2124,7 @@
         <aside data-reveal>
           <p class="kicker">About me</p>
           <figure class="about-portrait">
-            <img src="assets/aabhishek-sunglasses-upward-gaze-front.jpg" alt="Aabhishek Siloya wearing sunglasses and looking upward." width="896" height="1200" loading="lazy" decoding="async">
+            <img src="assets/aabhishek-sunglasses-upward-gaze-front.webp" srcset="assets/aabhishek-sunglasses-upward-gaze-front-720.webp 720w, assets/aabhishek-sunglasses-upward-gaze-front.webp 896w" sizes="(max-width: 700px) calc(100vw - 40px), 34vw" alt="Aabhishek Siloya wearing sunglasses and looking upward." width="896" height="1200" loading="lazy" decoding="async">
           </figure>
           <div class="about-signature">
             <strong>Aabhishek Siloya</strong>
