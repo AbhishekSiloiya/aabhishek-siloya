@@ -44,7 +44,9 @@ test('privacy and not-found pages are public and reachable from the site', async
   assert.match(privacy, /90 days/);
   assert.match(privacy, /Web3Forms/);
   assert.match(privacy, /aabhisheksiloiya708@gmail\.com/);
-  assert.match(notFound, /href="\/">Return to the website<\/a>/);
+  assert.match(privacy, /href="\.\/" aria-label="Aabhishek Siloya — home"/);
+  assert.match(privacy, /href="\.\/">Return to the website<\/a>/);
+  assert.match(notFound, /href="\.\/">Return to the website<\/a>/);
 });
 
 test('person structured data identifies the canonical profile and organisations', async () => {
@@ -96,10 +98,14 @@ test('below-fold portraits use responsive WebP delivery', async () => {
 
 test('critical typography is self-hosted without a render-blocking font stylesheet', async () => {
   const html = await readFile(pagePath, 'utf8');
+  const privacy = await readFile(new URL('privacy.html', root), 'utf8');
 
   assert.doesNotMatch(html, /fonts\.googleapis\.com|fonts\.gstatic\.com/);
+  assert.doesNotMatch(privacy, /fonts\.googleapis\.com|fonts\.gstatic\.com/);
   assert.match(html, /assets\/manrope-latin-variable\.woff2/);
   assert.match(html, /assets\/newsreader-latin-variable\.woff2/);
+  assert.match(privacy, /assets\/manrope-latin-variable\.woff2/);
+  assert.match(privacy, /assets\/newsreader-latin-variable\.woff2/);
 
   await access(new URL('assets/manrope-latin-variable.woff2', root));
   await access(new URL('assets/newsreader-latin-variable.woff2', root));

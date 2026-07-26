@@ -8,11 +8,25 @@
   <link rel="canonical" href="https://aabhisheksiloya.com/privacy.html">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/manrope-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/newsreader-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
   <title>Privacy — Aabhishek Siloya</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,300;6..72,400&amp;display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-display: swap;
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 400 600;
+      src: url("assets/manrope-latin-variable.woff2") format("woff2");
+    }
+    @font-face {
+      font-display: swap;
+      font-family: "Newsreader";
+      font-style: normal;
+      font-weight: 300 500;
+      src: url("assets/newsreader-latin-variable.woff2") format("woff2");
+    }
+
     :root {
       --ink: #151512;
       --paper: #f2eee6;
@@ -44,8 +58,8 @@
 </head>
 <body>
   <header class="masthead">
-    <a class="mark" href="/" aria-label="Aabhishek Siloya — home">AS</a>
-    <a class="back" href="/">Return to the website</a>
+    <a class="mark" href="./" aria-label="Aabhishek Siloya — home">AS</a>
+    <a class="back" href="./">Return to the website</a>
   </header>
   <main>
     <p class="kicker">Privacy</p>
