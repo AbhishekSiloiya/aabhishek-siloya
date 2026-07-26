@@ -45,13 +45,13 @@ test('payload records attribution without leaking irrelevant mode fields', () =>
       introduced_person: 'Should not be included',
     },
     intent: 'cgp',
-    pageUrl: 'https://aabhisheksiloiya.com/?utm_source=linkedin&utm_campaign=quiet-authority',
+    pageUrl: 'https://aabhisheksiloya.com/?utm_source=linkedin&utm_campaign=quiet-authority',
   });
 
   assert.equal(payload.intent, 'cgp');
   assert.equal(payload.utm_source, 'linkedin');
   assert.equal(payload.utm_campaign, 'quiet-authority');
-  assert.equal(payload.page_url, 'https://aabhisheksiloiya.com/?utm_source=linkedin&utm_campaign=quiet-authority');
+  assert.equal(payload.page_url, 'https://aabhisheksiloya.com/?utm_source=linkedin&utm_campaign=quiet-authority');
   assert.equal(payload.decision, 'TEST — Quiet Authority lead form delivery verification');
   assert.equal('introduced_person' in payload, false);
 });
