@@ -134,10 +134,9 @@ test('public deploy set excludes unused portrait source files', async () => {
   }
 });
 
-test('staging build does not pre-claim the production domain', async () => {
-  await assert.rejects(
-    access(new URL('CNAME', root)),
-    (error) => error.code === 'ENOENT',
-    'CNAME must only be introduced during the approved domain-cutover phase',
+test('production build claims the approved custom domain', async () => {
+  assert.equal(
+    (await readFile(new URL('CNAME', root), 'utf8')).trim(),
+    'aabhisheksiloya.com',
   );
 });
