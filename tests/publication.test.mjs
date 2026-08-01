@@ -8,6 +8,8 @@ const pagePath = new URL('index.html', root);
 test('publication metadata uses the canonical domain and dedicated social asset', async () => {
   const html = await readFile(pagePath, 'utf8');
 
+  assert.match(html, /<title>Aabhishek Siloya \| Strategic Counsel for Founders &amp; Family Businesses<\/title>/);
+  assert.match(html, /<meta name="description" content="Private strategic counsel for founders, owners and family businesses navigating profitable growth, leadership transition, succession and continuity\.">/);
   assert.match(html, /<link rel="canonical" href="https:\/\/aabhisheksiloya\.com\/">/);
   assert.match(html, /<meta property="og:url" content="https:\/\/aabhisheksiloya\.com\/">/);
   assert.match(html, /<meta property="og:image" content="https:\/\/aabhisheksiloya\.com\/assets\/aabhishek-siloya-social-card\.jpg">/);
@@ -30,8 +32,11 @@ test('search discovery files expose only public canonical URLs', async () => {
   const robots = await readFile(new URL('robots.txt', root), 'utf8');
   const sitemap = await readFile(new URL('sitemap.xml', root), 'utf8');
 
+  assert.match(robots, /User-agent: OAI-SearchBot\nAllow: \//);
+  assert.match(robots, /User-agent: PerplexityBot\nAllow: \//);
   assert.match(robots, /Sitemap: https:\/\/aabhisheksiloya\.com\/sitemap\.xml/);
   assert.match(sitemap, /<loc>https:\/\/aabhisheksiloya\.com\/<\/loc>/);
+  assert.match(sitemap, /<lastmod>2026-08-01<\/lastmod>/);
   assert.match(sitemap, /<loc>https:\/\/aabhisheksiloya\.com\/privacy\.html<\/loc>/);
 });
 
@@ -49,22 +54,33 @@ test('privacy and not-found pages are public and reachable from the site', async
   assert.match(notFound, /href="\.\/">Return to the website<\/a>/);
 });
 
-test('person structured data identifies the canonical profile and organisations', async () => {
+test('profile structured data connects the canonical website, person and organisations', async () => {
   const html = await readFile(pagePath, 'utf8');
   const match = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
 
-  assert.ok(match, 'Person JSON-LD is present');
+  assert.ok(match, 'ProfilePage JSON-LD is present');
 
-  const person = JSON.parse(match[1]);
+  const data = JSON.parse(match[1]);
+  const entities = Object.fromEntries(data['@graph'].map((item) => [item['@id'], item]));
+  const website = entities['https://aabhisheksiloya.com/#website'];
+  const profile = entities['https://aabhisheksiloya.com/#profile-page'];
+  const person = entities['https://aabhisheksiloya.com/#person'];
+
+  assert.equal(website['@type'], 'WebSite');
+  assert.equal(website.publisher['@id'], person['@id']);
+  assert.equal(profile['@type'], 'ProfilePage');
+  assert.equal(profile.mainEntity['@id'], person['@id']);
+  assert.equal(profile.dateModified, '2026-08-01');
   assert.equal(person['@type'], 'Person');
   assert.equal(person['@id'], 'https://aabhisheksiloya.com/#person');
   assert.equal(person.url, 'https://aabhisheksiloya.com/');
-  assert.equal(person.image, 'https://aabhisheksiloya.com/assets/aabhishek-black-white-side-profile.jpg');
+  assert.equal(person.image.url, 'https://aabhisheksiloya.com/assets/aabhishek-black-white-side-profile.jpg');
   assert.deepEqual(person.sameAs, ['https://www.linkedin.com/in/aabhisheksiloya/']);
+  assert.ok(person.knowsAbout.includes('Legacy and continuity'));
+  assert.ok(person.knowsAbout.includes('Ownership and decision rights'));
 
-  const organisations = Object.fromEntries(person.worksFor.map((item) => [item.name, item.url]));
-  assert.equal(organisations.Bhuzen, 'https://www.bhuzen.com');
-  assert.equal(organisations.VaxGuard, 'https://vaxguard.app');
+  assert.equal(entities['https://aabhisheksiloya.com/#bhuzen'].url, 'https://www.bhuzen.com');
+  assert.equal(entities['https://aabhisheksiloya.com/#vaxguard'].url, 'https://vaxguard.app');
 });
 
 test('hero portrait uses an optimised, high-priority delivery asset', async () => {
