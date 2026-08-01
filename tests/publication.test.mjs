@@ -70,7 +70,7 @@ test('profile structured data connects the canonical website, person and organis
   assert.equal(website.publisher['@id'], person['@id']);
   assert.equal(profile['@type'], 'ProfilePage');
   assert.equal(profile.mainEntity['@id'], person['@id']);
-  assert.equal(profile.dateModified, '2026-08-01');
+  assert.equal(profile.dateModified, '2026-08-01T13:09:22+01:00');
   assert.equal(person['@type'], 'Person');
   assert.equal(person['@id'], 'https://aabhisheksiloya.com/#person');
   assert.equal(person.url, 'https://aabhisheksiloya.com/');
