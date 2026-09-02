@@ -30,6 +30,28 @@ test('Home follows the approved six-movement sequence', async () => {
   assert.match(html, /£50m\+[\s\S]*\$1bn[\s\S]*Japan Airlines/);
 });
 
+test('Home carries the live-page composition without leaking into other pages', async () => {
+  const [home, work, about, css] = await Promise.all([
+    read('index.html'),
+    read('work.html'),
+    read('about.html'),
+    read('assets/review.css'),
+  ]);
+
+  assert.match(home, /<body class="home-page">/);
+  assert.doesNotMatch(work, /<body class="home-page">/);
+  assert.doesNotMatch(about, /<body class="home-page">/);
+  assert.match(home, /class="philosophy-content"/);
+  assert.match(home, /class="cgp-content"/);
+
+  assert.match(css, /\.home-page \.site-header\{[^}]*position:fixed/);
+  assert.match(css, /\.home-page \.hero\{[^}]*min-height:100svh/);
+  assert.match(css, /\.home-page \.hero-content\{[^}]*min-height:100svh/);
+  assert.match(css, /\.home-page \.philosophy h2\{[^}]*max-width:13ch/);
+  assert.match(css, /\.home-page \.cgp h2\{[^}]*max-width:15ch/);
+  assert.doesNotMatch(css, /\.home-page \.hero-portrait\{[^}]*position:relative/);
+});
+
 test('About is a five-part first-person trust narrative with one portrait', async () => {
   const html = await read('about.html');
   for (const id of ['identity', 'operating-path', 'why-coaching', 'private-room', 'wider-practice']) {
