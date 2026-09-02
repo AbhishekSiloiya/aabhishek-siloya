@@ -1,6 +1,6 @@
 /* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4
  * macrostructure: Marquee Hero · tone: quiet luxury · anchor hue: bronze
- * studied-DNA: user's live Aabhishek Siloya site · scope: Home only
+ * theme: studied-DNA (source: user's live Aabhishek Siloya site) · scope: Home only
  */
 @font-face{font-family:Manrope;src:url(manrope-latin-variable.woff2) format("woff2");font-weight:200 800;font-display:swap}
 @font-face{font-family:Newsreader;src:url(newsreader-latin-variable.woff2) format("woff2");font-weight:300 700;font-display:swap}
@@ -69,6 +69,7 @@ section[id]{scroll-margin-top:var(--header)}
 }
 
 /* Home reset — the live site's proven composition, scoped away from Work and About. */
+html:has(.home-page){overflow-x:clip}
 .home-page{--header:76px;--shell:min(1240px,calc(100% - 80px));background:var(--paper);line-height:1.65;overflow-x:clip;text-rendering:optimizeLegibility}
 .home-page :focus-visible{outline:2px solid #c2a580;outline-offset:5px}
 .home-page .site-header{background:transparent;border-bottom:1px solid transparent;color:var(--bright);height:var(--header);inset:0 0 auto;position:fixed;transition:background-color .35s var(--ease),border-color .35s var(--ease),color .35s var(--ease)}

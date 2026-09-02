@@ -43,7 +43,9 @@ test('Home carries the live-page composition without leaking into other pages', 
   assert.doesNotMatch(about, /<body class="home-page">/);
   assert.match(home, /class="philosophy-content"/);
   assert.match(home, /class="cgp-content"/);
+  assert.equal((home.match(/class="about-title-line"/g) || []).length, 2);
 
+  assert.match(css, /html:has\(\.home-page\)\{overflow-x:clip\}/);
   assert.match(css, /\.home-page \.site-header\{[^}]*position:fixed/);
   assert.match(css, /\.home-page \.hero\{[^}]*min-height:100svh/);
   assert.match(css, /\.home-page \.hero-content\{[^}]*min-height:100svh/);
