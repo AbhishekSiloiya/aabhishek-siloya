@@ -147,11 +147,12 @@ html:has(.home-page){overflow-x:clip}
 .home-page .cgp-action{align-items:end;border-top:0;display:flex;justify-content:space-between;margin-top:16px;padding-top:6px}
 .home-page .cgp-action p{font-size:10px;letter-spacing:.12em;text-transform:uppercase}
 
-.home-page .correspondence h2{font-size:clamp(56px,6.8vw,92px);line-height:1.02;margin:31px 0 38px;max-width:none;overflow-wrap:anywhere;width:100%}
-.home-page .contact-path{min-height:300px;padding-top:24px}
-.home-page .contact-path h3{font-size:clamp(30px,2.8vw,38px);margin:34px 0 18px}
-.home-page .contact-path p{margin-bottom:26px}
-.home-page .contact-discretion{margin-top:26px}
+.home-page .correspondence h2{font-size:clamp(50px,5.2vw,72px);line-height:1.03;margin:23px 0 24px;max-width:none;overflow-wrap:anywhere;width:100%}
+.home-page .contact-path{min-height:252px;padding:22px clamp(28px,4vw,48px) 0 0}
+.home-page .contact-path+.contact-path{padding-left:clamp(28px,4vw,48px);padding-right:0}
+.home-page .contact-path h3{font-size:clamp(29px,2.6vw,36px);margin:27px 0 14px}
+.home-page .contact-path p{line-height:1.68;margin-bottom:22px}
+.home-page .contact-discretion{margin-top:20px}
 
 .home-page .proof-layout{align-items:start;gap:clamp(48px,6.3vw,86px);grid-template-columns:minmax(300px,.76fr) minmax(0,1.24fr)}
 .home-page .proof-head{position:sticky;top:calc(var(--header) + 24px)}
@@ -165,7 +166,6 @@ html:has(.home-page){overflow-x:clip}
 .home-page .proof-result{display:grid;gap:3px;margin:0}
 .home-page .proof-result>span{color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
 .home-page .proof-value{color:var(--ink);font-size:clamp(40px,3.7vw,53px);line-height:.95;margin:0;white-space:nowrap}
-.home-page .proof-value-long{font-size:clamp(29px,2.55vw,37px);letter-spacing:-.025em;white-space:normal}
 .home-page .proof-explanation{color:var(--muted);font-size:13px;line-height:1.65;margin:0}
 .home-page .proof-context{border-bottom:1px solid var(--line);display:grid;gap:12px 28px;grid-template-columns:minmax(112px,.52fr) minmax(0,1.85fr);padding:27px 0}
 .home-page .proof-context>span{color:var(--bronze);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
@@ -243,16 +243,19 @@ html:has(.home-page){overflow-x:clip}
   .home-page .cgp-item h3{font-size:32px}
   .home-page .cgp-action{align-items:flex-start;gap:20px}
   .home-page .correspondence h2,.home-page .proof-head h2,.home-page .home-about-copy h2{font-size:clamp(48px,13.5vw,58px)}
+  .home-page .correspondence h2{font-size:clamp(46px,13vw,54px);margin:22px 0 18px}
   .home-page .about-title-line{white-space:normal}
   .home-page .contact-paths{display:block}
-  .home-page .contact-path,.home-page .contact-path+.contact-path{border-left:0;min-height:0;padding:24px 0 27px}
+  .home-page .contact-path,.home-page .contact-path+.contact-path{border-left:0;min-height:0;padding:20px 0 22px}
+  .home-page .contact-path h3{margin:23px 0 13px}
+  .home-page .contact-path p{margin-bottom:20px}
+  .home-page .contact-discretion{margin-top:16px}
   .home-page .proof-layout{display:grid;gap:34px;grid-template-columns:1fr}
   .home-page .proof-head{position:static;top:auto}
   .home-page .proof-head h2{max-width:11ch}
   .home-page .proof-row{gap:10px;grid-template-columns:1fr;padding:22px 0}
   .home-page .proof-result{gap:5px}
   .home-page .proof-value{font-size:45px}
-  .home-page .proof-value-long{font-size:34px}
   .home-page .proof-explanation{grid-column:auto;margin-top:2px;max-width:46ch}
   .home-page .proof-context{display:grid;gap:10px;grid-template-columns:1fr;padding:24px 0}
   .home-page .proof-context p{grid-column:auto}
