@@ -146,7 +146,7 @@ section[id]{scroll-margin-top:var(--header)}
 .home-page .cgp-action{align-items:end;border-top:0;display:flex;justify-content:space-between;margin-top:16px;padding-top:6px}
 .home-page .cgp-action p{font-size:10px;letter-spacing:.12em;text-transform:uppercase}
 
-.home-page .correspondence h2{font-size:clamp(55px,6vw,82px);line-height:1.02;margin:28px 0 38px;max-width:15ch;overflow-wrap:anywhere}
+.home-page .correspondence h2{font-size:clamp(56px,6.8vw,92px);line-height:1.02;margin:31px 0 38px;max-width:none;overflow-wrap:anywhere;width:100%}
 .home-page .contact-path{min-height:300px;padding-top:24px}
 .home-page .contact-path h3{font-size:clamp(30px,2.8vw,38px);margin:34px 0 18px}
 .home-page .contact-path p{margin-bottom:26px}
@@ -160,7 +160,8 @@ section[id]{scroll-margin-top:var(--header)}
 
 .home-page .home-about-grid{align-items:start;gap:clamp(50px,7vw,96px);grid-template-columns:minmax(220px,.54fr) minmax(0,1.46fr)}
 .home-page .round-portrait{border:1px solid rgba(139,103,65,.55);box-shadow:0 24px 60px -38px rgba(0,0,0,.75);height:210px;margin-top:25px;width:210px}
-.home-page .home-about-copy h2{font-size:clamp(48px,5.2vw,72px);line-height:1.02;margin-bottom:28px;max-width:13ch;overflow-wrap:anywhere}
+.home-page .home-about-copy h2{font-size:clamp(48px,5.2vw,72px);line-height:1.02;margin-bottom:28px;max-width:none;overflow-wrap:anywhere}
+.home-page .about-title-line{display:block;white-space:nowrap}
 .home-page .home-about-copy>p{font-size:15px;line-height:1.75;max-width:72ch}
 .home-page .inline-links{border-block:1px solid var(--line);display:grid;gap:0;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:28px}
 .home-page .inline-links a{align-items:center;border-bottom:0;display:flex;justify-content:space-between;min-height:54px;padding:0 14px;white-space:nowrap}
@@ -223,6 +224,7 @@ section[id]{scroll-margin-top:var(--header)}
   .home-page .cgp-item h3{font-size:32px}
   .home-page .cgp-action{align-items:flex-start;gap:20px}
   .home-page .correspondence h2,.home-page .proof-head h2,.home-page .home-about-copy h2{font-size:clamp(48px,13.5vw,58px)}
+  .home-page .about-title-line{white-space:normal}
   .home-page .contact-paths{display:block}
   .home-page .contact-path,.home-page .contact-path+.contact-path{border-left:0;min-height:0;padding:24px 0 27px}
   .home-page .proof-layout,.home-page .home-about-grid{display:grid;gap:40px;grid-template-columns:1fr}

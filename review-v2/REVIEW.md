@@ -2,9 +2,11 @@
 
 **Review status:** Local only. Nothing in this folder is published.
 
+**Current pass:** Home reset to the live site's proven visual DNA. Work and About are frozen in this pass.
+
 ## Pages ready for visual review
 
-- [Home](http://127.0.0.1:8767/) — authority, philosophy, CGP, private correspondence, prior work and the concise About close.
+- [Home](http://127.0.0.1:8767/) — dark portrait-led introduction, live-balanced typography, philosophy, CGP, private correspondence, prior work and the concise About close.
 - [Work](http://127.0.0.1:8767/work.html) — a selective record: three verified proof points, three fields of experience, one qualified TRVLR case and a bridge to the present practice.
 - [About](http://127.0.0.1:8767/about.html) — a first-person trust narrative: identity, operating formation, why coaching, the private room and the wider practice.
 
@@ -50,4 +52,3 @@ The next version of this review record will add:
 3. A navigation and authority-building sequence.
 4. A site mind map.
 5. A page-by-page storyline flow.
-
