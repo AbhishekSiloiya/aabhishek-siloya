@@ -34,10 +34,18 @@ test('Home proof translates earlier delivery into founder-relevant evidence', as
   const html = await read('index.html');
   assert.match(html, /Before counsel, there was delivery\./);
   assert.match(html, /Commercial opportunity[\s\S]*Operating scale[\s\S]*Execution velocity/);
-  assert.match(html, /£50m\+[\s\S]*\$1bn[\s\S]*Around four months/);
+  assert.match(html, /£50m\+[\s\S]*\$1bn[\s\S]*>3 months</);
+  assert.match(html, /approximately three months, against an estimated six-to-eight-month timeline/);
   assert.match(html, /United Kingdom · Europe · Japan/);
   assert.match(html, /not presented as clients of my current private coaching practice/);
   assert.doesNotMatch(html, /Different sectors\. The same standard\./);
+});
+
+test('Home correspondence opens quietly and preserves both lead paths', async () => {
+  const html = await read('index.html');
+  assert.match(html, /id="correspondence-title">Begin privately\.<\/h2>/);
+  assert.match(html, /data-lead="conversation"[\s\S]*data-lead="introduction"/);
+  assert.doesNotMatch(html, /Begin with the decision\. Or make a considered introduction\./);
 });
 
 test('Home carries the live-page composition without leaking into other pages', async () => {
