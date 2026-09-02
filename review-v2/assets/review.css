@@ -153,11 +153,25 @@ html:has(.home-page){overflow-x:clip}
 .home-page .contact-path p{margin-bottom:26px}
 .home-page .contact-discretion{margin-top:26px}
 
-.home-page .proof-layout{gap:clamp(50px,7vw,96px);grid-template-columns:.78fr 1.22fr}
-.home-page .proof-head h2{font-size:clamp(52px,5.4vw,76px);line-height:1.02;margin:28px 0 21px;max-width:10ch}
-.home-page .proof-row{padding:22px 0}
-.home-page .proof-row h3{font-size:clamp(25px,2.2vw,31px)}
-.home-page .proof-value{font-size:clamp(37px,3.5vw,48px)}
+.home-page .proof-layout{align-items:start;gap:clamp(48px,6.3vw,86px);grid-template-columns:minmax(300px,.76fr) minmax(0,1.24fr)}
+.home-page .proof-head{position:sticky;top:calc(var(--header) + 24px)}
+.home-page .proof-head h2{font-size:clamp(52px,5.4vw,76px);line-height:1.02;margin:28px 0 22px;max-width:10ch}
+.home-page .proof-intro{color:var(--muted);font-size:14px;line-height:1.72;margin:0;max-width:47ch}
+.home-page .proof-head .text-action{display:inline-block;margin-top:27px}
+.home-page .proof-evidence{min-width:0}
+.home-page .proof-list{border-color:rgba(21,22,18,.26)}
+.home-page .proof-row{align-items:center;display:grid;gap:clamp(18px,2vw,28px);grid-template-columns:minmax(112px,.52fr) minmax(155px,.7fr) minmax(0,1.15fr);padding:24px 0}
+.home-page .proof-label{color:var(--bronze);font-size:9px;font-weight:700;letter-spacing:.13em;line-height:1.45;text-transform:uppercase}
+.home-page .proof-result{display:grid;gap:3px;margin:0}
+.home-page .proof-result>span{color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.home-page .proof-value{color:var(--ink);font-size:clamp(40px,3.7vw,53px);line-height:.95;margin:0;white-space:nowrap}
+.home-page .proof-value-long{font-size:clamp(29px,2.55vw,37px);letter-spacing:-.025em;white-space:normal}
+.home-page .proof-explanation{color:var(--muted);font-size:13px;line-height:1.65;margin:0}
+.home-page .proof-context{border-bottom:1px solid var(--line);display:grid;gap:12px 28px;grid-template-columns:minmax(112px,.52fr) minmax(0,1.85fr);padding:27px 0}
+.home-page .proof-context>span{color:var(--bronze);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.home-page .proof-context strong{font-family:var(--serif);font-size:clamp(24px,2vw,30px);font-weight:420;line-height:1.15}
+.home-page .proof-context p{color:var(--muted);font-size:12px;grid-column:2;line-height:1.65;margin:0;max-width:64ch}
+.home-page .proof-provenance{color:#77736b;font-size:9px;letter-spacing:.035em;line-height:1.6;margin:17px 0 0;max-width:78ch}
 
 .home-page .home-about-grid{align-items:start;gap:clamp(50px,7vw,96px);grid-template-columns:minmax(220px,.54fr) minmax(0,1.46fr)}
 .home-page .round-portrait{border:1px solid rgba(139,103,65,.55);box-shadow:0 24px 60px -38px rgba(0,0,0,.75);height:210px;margin-top:25px;width:210px}
@@ -181,6 +195,10 @@ html:has(.home-page){overflow-x:clip}
   .home-page .cgp-thesis span,.home-page .cgp-thesis span+span{border-left:0;padding-left:0;padding-right:0}
   .home-page .cgp-item,.home-page .cgp-item+.cgp-item{gap:16px;grid-template-columns:56px 1fr}
   .home-page .cgp-item p{grid-column:2}
+  .home-page .proof-layout{grid-template-columns:minmax(260px,.67fr) minmax(0,1.33fr)}
+  .home-page .proof-row{align-items:start;grid-template-columns:minmax(118px,.62fr) minmax(0,1.38fr)}
+  .home-page .proof-explanation{grid-column:2}
+  .home-page .proof-context{grid-template-columns:118px minmax(0,1fr)}
 }
 
 @media(max-width:720px){
@@ -228,6 +246,17 @@ html:has(.home-page){overflow-x:clip}
   .home-page .about-title-line{white-space:normal}
   .home-page .contact-paths{display:block}
   .home-page .contact-path,.home-page .contact-path+.contact-path{border-left:0;min-height:0;padding:24px 0 27px}
+  .home-page .proof-layout{display:grid;gap:34px;grid-template-columns:1fr}
+  .home-page .proof-head{position:static;top:auto}
+  .home-page .proof-head h2{max-width:11ch}
+  .home-page .proof-row{gap:10px;grid-template-columns:1fr;padding:22px 0}
+  .home-page .proof-result{gap:5px}
+  .home-page .proof-value{font-size:45px}
+  .home-page .proof-value-long{font-size:34px}
+  .home-page .proof-explanation{grid-column:auto;margin-top:2px;max-width:46ch}
+  .home-page .proof-context{display:grid;gap:10px;grid-template-columns:1fr;padding:24px 0}
+  .home-page .proof-context p{grid-column:auto}
+  .home-page .proof-provenance{margin-top:14px}
   .home-page .proof-layout,.home-page .home-about-grid{display:grid;gap:40px;grid-template-columns:1fr}
   .home-page .proof-row{grid-template-columns:1fr}
   .home-page .round-portrait{height:180px;width:180px}
