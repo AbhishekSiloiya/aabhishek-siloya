@@ -33,9 +33,10 @@ test('Home follows the approved six-movement sequence', async () => {
 test('Home proof translates earlier delivery into founder-relevant evidence', async () => {
   const html = await read('index.html');
   assert.match(html, /Before counsel, there was delivery\./);
-  assert.match(html, /Commercial opportunity[\s\S]*Operating scale[\s\S]*Execution velocity/);
-  assert.match(html, /£50m\+[\s\S]*\$1bn[\s\S]*>3 months</);
+  assert.match(html, /Commercial opportunity[\s\S]*Operating scale[\s\S]*Timeline reduction/);
+  assert.match(html, /£50m\+[\s\S]*\$1bn[\s\S]*>50%\+</);
   assert.match(html, /approximately three months, against an estimated six-to-eight-month timeline/);
+  assert.doesNotMatch(html, />3 months</);
   assert.match(html, /United Kingdom · Europe · Japan/);
   assert.match(html, /not presented as clients of my current private coaching practice/);
   assert.doesNotMatch(html, /Different sectors\. The same standard\./);
