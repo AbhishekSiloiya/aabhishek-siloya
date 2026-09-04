@@ -94,7 +94,7 @@ test('Work reads as a six-part evidence-led authority narrative', async () => {
 
   assert.match(html, /A record of decisions made real\./);
   assert.equal((html.match(/class="case-chapter"/g) || []).length, 4);
-  assert.match(html, /£50m\+[\s\S]*\$1bn[\s\S]*Under four months[\s\S]*3–5 year/);
+  assert.match(html, /£50m\+[\s\S]*\$1bn[\s\S]*Up to 50%[\s\S]*3–5 year/);
   assert.match(html, /prior operating work—not clients of my present independent practice/i);
   assert.match(html, /I have also carried the risk\./);
   assert.match(html, /Daniella later confirmed that the itinerary feedback had been taken on board and the itinerary updated\./);
@@ -165,4 +165,24 @@ test('Work uses a scoped editorial-compression scale without shrinking body copy
   assert.match(css, /@media\(max-width:720px\)[\s\S]*\.work-page\{[^}]*--work-section-y:44px/);
   assert.match(css, /\.case-story>p:last-child\{[^}]*font-size:13px/);
   assert.match(css, /\.advisory-copy>p\{[^}]*font-size:14px/);
+});
+
+test('Work presents qualified timing evidence and one human closing portrait', async () => {
+  const html = await read('work.html');
+
+  assert.match(html, /Up to 50%/);
+  assert.match(html, /reduction in delivery time/);
+  assert.doesNotMatch(html, /Under four months/);
+  assert.match(html, /class="work-close-portrait"[\s\S]*aabhishek-sunglasses-upward-gaze-front\.webp/);
+});
+
+test('Work polish uses a compact desktop fold, balanced founder ledger and quiet rule motion', async () => {
+  const css = await read('assets/review.css');
+
+  assert.match(css, /\.work-page\{[^}]*--work-fold-opening-y:clamp\(24px,2\.3vw,32px\)/);
+  assert.match(css, /\.work-page\{[^}]*--work-fold-register-y:clamp\(22px,2\.1vw,28px\)/);
+  assert.match(css, /@media\(min-width:981px\)[\s\S]*\.work-page \.work-opening\{[^}]*padding-block:var\(--work-fold-opening-y\)/);
+  assert.match(css, /\.venture-register\{[^}]*display:grid[^}]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+  assert.match(css, /@media\(max-width:720px\)[\s\S]*\.venture-register\{[^}]*display:block/);
+  assert.match(css, /\.work-page\.js-ready \.case-chapter:after/);
 });
