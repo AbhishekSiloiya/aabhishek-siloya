@@ -51,3 +51,14 @@ The page leads with consequence rather than a self-description. Four short opera
 - The complete organisation register is present without becoming a loud SaaS-style logo wall.
 - Desktop and mobile retain the same reading order, with no clipped type or horizontal overflow.
 
+## Approved refinement — editorial compression
+
+The first implementation proved the narrative structure but retained too much ceremonial scale. The refinement keeps the six-part sequence and all approved evidence while making the page feel sharper and more assured.
+
+- Reduce total page height by approximately 20–25% at laptop and mobile widths.
+- Cap the opening title below 80px on desktop and below 58px on mobile.
+- Keep section titles materially quieter than the opening title.
+- Reduce section intervals, grid gaps, evidence-row padding and CTA height without compressing body copy below a readable 13px minimum.
+- Make the organisation register a compact credibility band rather than a visual destination.
+- Shorten the TRVLR artefact so it supports the advisory note instead of dominating it.
+- Preserve all content, organisation marks, lead actions, reading order and reduced-motion behaviour.

@@ -155,3 +155,14 @@ test('Work logo register can contract to a 320px viewport', async () => {
   assert.match(css, /\.organisation-mark\{[^}]*min-width:0/);
   assert.match(css, /grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
 });
+
+test('Work uses a scoped editorial-compression scale without shrinking body copy', async () => {
+  const css = await read('assets/review.css');
+
+  assert.match(css, /\.work-page\{[^}]*--work-section-y:clamp\(48px,4\.8vw,68px\)/);
+  assert.match(css, /\.work-page\{[^}]*--work-display-opening:clamp\(56px,5\.7vw,78px\)/);
+  assert.match(css, /\.work-page \.work-opening,[^{]+\{padding:var\(--work-section-y\) 0\}/);
+  assert.match(css, /@media\(max-width:720px\)[\s\S]*\.work-page\{[^}]*--work-section-y:44px/);
+  assert.match(css, /\.case-story>p:last-child\{[^}]*font-size:13px/);
+  assert.match(css, /\.advisory-copy>p\{[^}]*font-size:14px/);
+});

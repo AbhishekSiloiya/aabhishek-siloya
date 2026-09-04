@@ -7,7 +7,7 @@
 ## Pages ready for visual review
 
 - [Home](http://127.0.0.1:8767/) — dark portrait-led introduction, live-balanced typography, philosophy, CGP, private correspondence, prior work and the concise About close.
-- [Work](http://127.0.0.1:8767/work.html) — a selective record: three verified proof points, three fields of experience, one qualified TRVLR case and a bridge to the present practice.
+- [Work](http://127.0.0.1:8767/work.html) — a compact evidence-led record: ten prior organisations, four operating decisions, a founder/operator bridge, one qualified TRVLR advisory note and a private close.
 - [About](http://127.0.0.1:8767/about.html) — a first-person trust narrative: identity, operating formation, why coaching, the private room and the wider practice.
 
 ## What is intentionally in scope
@@ -37,7 +37,7 @@ Portrait-led introduction → My Philosophy → The CGP System → Private Corre
 
 ### Work
 
-Opening thesis → verified record → wider fields of experience → qualified TRVLR case → present-practice invitation.
+Opening thesis → prior-organisation register → four operating decisions → founder/operator bridge → qualified TRVLR advisory note → present-practice invitation.
 
 ### About
 
