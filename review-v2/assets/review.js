@@ -1,15 +1,12 @@
 const toggle = document.querySelector('[data-menu-toggle]');
 const mobileNav = document.querySelector('[data-mobile-nav]');
 const homePage = document.body.classList.contains('home-page');
+const workPage = document.body.classList.contains('work-page');
 const siteHeader = document.querySelector('.site-header');
 
-if (homePage) {
+if (homePage || workPage) {
   document.body.classList.add('js-ready');
   requestAnimationFrame(() => document.body.classList.add('loaded'));
-
-  const syncHeader = () => siteHeader?.classList.toggle('scrolled', window.scrollY > 24);
-  syncHeader();
-  window.addEventListener('scroll', syncHeader, { passive: true });
 
   const reveals = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -24,6 +21,12 @@ if (homePage) {
   } else {
     reveals.forEach((item) => item.classList.add('visible'));
   }
+}
+
+if (homePage) {
+  const syncHeader = () => siteHeader?.classList.toggle('scrolled', window.scrollY > 24);
+  syncHeader();
+  window.addEventListener('scroll', syncHeader, { passive: true });
 }
 
 toggle?.addEventListener('click', () => {

@@ -84,12 +84,74 @@ test('About is a five-part first-person trust narrative with one portrait', asyn
   assert.doesNotMatch(html, /award-winning|board appointment|monthly retainer|clients of my practice/i);
 });
 
-test('Work uses three proof rows, three fields and one qualified case', async () => {
+test('Work reads as a six-part evidence-led authority narrative', async () => {
   const html = await read('work.html');
-  assert.equal((html.match(/class="work-record"/g) || []).length, 3);
-  assert.equal((html.match(/class="field"/g) || []).length, 3);
-  assert.match(html, /earlier operating experience—not clients of my present independent practice/);
-  assert.match(html, /£50m\+[\s\S]*\$1bn[\s\S]*six to eight months to around four/);
+
+  const ids = ['opening', 'organisations', 'decisions', 'built', 'trvlr', 'practice'];
+  const positions = ids.map((id) => html.indexOf(`id="${id}"`));
+  assert.ok(positions.every((position) => position >= 0));
+  assert.deepEqual([...positions].sort((a, b) => a - b), positions);
+
+  assert.match(html, /A record of decisions made real\./);
+  assert.equal((html.match(/class="case-chapter"/g) || []).length, 4);
+  assert.match(html, /£50m\+[\s\S]*\$1bn[\s\S]*Under four months[\s\S]*3–5 year/);
+  assert.match(html, /prior operating work—not clients of my present independent practice/i);
+  assert.match(html, /I have also carried the risk\./);
   assert.match(html, /Daniella later confirmed that the itinerary feedback had been taken on board and the itinerary updated\./);
-  assert.doesNotMatch(html, /client logos|logo wall|official asset/i);
+  assert.doesNotMatch(html, /Different rooms|Three moments where scale became measurable/);
+});
+
+test('Work shows the complete approved prior-organisation register', async () => {
+  const html = await read('work.html');
+  const organisations = [
+    'Maybourne Hotel Group',
+    'Heathrow',
+    'Japan Airlines',
+    'Sonepar',
+    'ASDA',
+    'European Tours',
+    'Howdens',
+    'Carnival Cruise',
+    'ASOS',
+    'BLU Digital',
+  ];
+
+  assert.equal((html.match(/class="organisation-mark/g) || []).length, organisations.length);
+  for (const organisation of organisations) assert.match(html, new RegExp(organisation));
+});
+
+test('Work uses verified local artwork and limits typographic marks to unresolved brands', async () => {
+  const html = await read('work.html');
+  for (const asset of [
+    'maybourne-logo-dark.svg',
+    'japan-airlines.svg',
+    'sonepar-logo-black.png',
+    'asda.svg',
+    'howdens-logo-black-horizontal.png',
+    'carnival-cruise-line-logo-340.jpg',
+    'asos.svg',
+  ]) {
+    assert.match(html, new RegExp(`assets/client-logos/${asset.replaceAll('.', '\\.')}`));
+  }
+  assert.equal((html.match(/organisation-mark--type/g) || []).length, 3);
+});
+
+test('Work uses one restrained reveal system with a reduced-motion fallback', async () => {
+  const [html, css, js] = await Promise.all([
+    read('work.html'),
+    read('assets/review.css'),
+    read('assets/review.js'),
+  ]);
+
+  assert.match(html, /class="work-page"/);
+  assert.ok((html.match(/data-reveal/g) || []).length >= 6);
+  assert.match(js, /work-page/);
+  assert.match(css, /\.work-page\.js-ready \[data-reveal\]/);
+  assert.match(css, /prefers-reduced-motion:reduce[\s\S]*\.work-page\.js-ready \[data-reveal\]/);
+});
+
+test('Work logo register can contract to a 320px viewport', async () => {
+  const css = await read('assets/review.css');
+  assert.match(css, /\.organisation-mark\{[^}]*min-width:0/);
+  assert.match(css, /grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
 });
