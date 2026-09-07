@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import test from 'node:test';
+const read = name => readFile(new URL('../'+name, import.meta.url), 'utf8');
+test('letter closes with boundaries, signature and one personal invitation', async()=>{
+  const html=await read('letter.html');
+  assert.match(html,/A letter to<br>the founder/);
+  const order=['Dear founder,','Working alongside you','Trust takes time','A conversation to begin','A few things to be clear about','Yours,','Tell me what you’re considering'];
+  const positions=order.map(s=>html.indexOf(s));
+  assert.ok(positions.every(n=>n>=0));
+  assert.deepEqual(positions,[...positions].sort((a,b)=>a-b));
+  assert.match(html,/not a promise of guaranteed growth/);
+  assert.match(html,/data-lead="conversation"/);
+});
+test('About puts Phenom first, then Sanjay, Sandeep and Martin with one-to-one mentoring stated',async()=>{
+  const html=await read('about.html');
+  const chapter=html.slice(html.indexOf('id="why-coaching"'),html.indexOf('id="private-room"'));
+  const order=['Phenom Coaching Systems','Sanjay Wadhwa','Sandeep Mukhi','Martin Clay'];
+  const positions=order.map(s=>chapter.indexOf(s));
+  assert.ok(positions.every(n=>n>=0));
+  assert.deepEqual(positions,[...positions].sort((a,b)=>a-b));
+  assert.equal((chapter.match(/class="certificate-reserve"/g)||[]).length,1);
+  assert.equal((chapter.match(/class="mentor-portrait"/g)||[]).length,3);
+  assert.match(chapter,/Sanjay[\s\S]*one-to-one/);
+  assert.match(chapter,/Sandeep[\s\S]*one-to-one/);
+  assert.match(chapter,/Martin[\s\S]*one-to-one/);
+  assert.match(chapter,/Connectd Board Advisor Course/);
+  assert.match(chapter,/48492/);
+  assert.match(chapter,/https:\/\/verify.trueoriginal.com\/E18C6F62-13E3-F39D-21CB-A4D4D4A3F715\//);
+  assert.doesNotMatch(chapter,/\?token=|__cu=/);
+});
