@@ -110,3 +110,16 @@ test('Work and About use controlled two-line mobile opening statements', async (
   assert.match(about, /href="assets\/review\.css\?v=25"/);
   assert.match(css, /@media\(max-width:620px\)[\s\S]*\.work-opening h1 span,\.about-intro span\{display:block;white-space:nowrap\}/);
 });
+
+test('About publishes the Phenom certificate without exposing the phone original', async () => {
+  const about = await read('about.html');
+  const preview = new URL('assets/credentials/phenom-international-business-coach.jpg', root);
+  const document = new URL('assets/credentials/phenom-international-business-coach.pdf', root);
+
+  await access(preview);
+  await access(document);
+  assert.match(about, /src="assets\/credentials\/phenom-international-business-coach\.jpg"/);
+  assert.match(about, /href="assets\/credentials\/phenom-international-business-coach\.pdf"[^>]*target="_blank"[^>]*rel="noopener"/);
+  assert.match(about, /alt="Phenom International Business Coach certificate awarded to Aabhishek Siloya"/);
+  assert.doesNotMatch(about, /Certificate image to be supplied|Certificate reserved|image is supplied/i);
+});

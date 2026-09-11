@@ -650,6 +650,8 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
 .certificate-display{margin:0;max-width:510px;width:100%;justify-self:end;border:1px solid var(--line)}
 .certificate-preview{display:block;overflow:hidden;aspect-ratio:1080/766;background:#1b2235}
 .certificate-preview img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 46.8%}
+.certificate-preview--phenom{aspect-ratio:1600/1232;background:var(--paper)}
+.certificate-preview--phenom img{object-fit:contain;object-position:center}
 .certificate-display figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:12px 14px;font-size:10px;line-height:1.6;color:var(--muted)}
 .certificate-display figcaption a{text-decoration:underline;text-underline-offset:4px;color:var(--ink)}
 .mentor-row h3{font-size:28px;line-height:1.2;margin:0}
