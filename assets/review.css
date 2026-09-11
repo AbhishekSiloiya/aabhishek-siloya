@@ -656,7 +656,8 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
 .mentor-row h3 a:hover{color:var(--bronze)}
 .mentor-row p{color:var(--muted);font-size:14px;line-height:1.7;margin:0;max-width:65ch}
 .formation-connectd{border-top:0;margin-top:0;padding-top:28px}
-.about-page .about-private>.shell>.text-action{margin-top:26px}
+.about-private-actions{align-items:center;display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:26px}
+.about-private-actions .contact-link,.about-private-actions .text-action{margin:0}
 @media(max-width:1040px){
   .mark span{display:none}.primary-nav ul,.home-page .primary-nav ul{gap:20px}
   .primary-nav .nav-cta{display:none}
