@@ -92,6 +92,7 @@ test('mobile letter title is locked to two lines so the portrait enters the firs
   const css = await read('assets/review.css');
 
   assert.match(letter, /<h1 id="letter-title"><span>For those carrying<\/span><span>what comes next\.<\/span><\/h1>/);
+  assert.match(letter, /href="assets\/review\.css\?v=24"/);
   assert.match(css, /\.letter-opening h1 span\{display:block\}/);
   assert.match(css, /@media\(max-width:759px\)[\s\S]*\.letter-opening h1\{[^}]*font-size:clamp\(36px,10vw,42px\)[^}]*max-width:none/);
   assert.match(css, /@media\(max-width:759px\)[\s\S]*\.letter-opening h1 span\{white-space:nowrap\}/);
