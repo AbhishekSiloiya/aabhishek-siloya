@@ -291,6 +291,7 @@ html:has(.work-page){overflow-x:clip}
 
 .work-page .work-opening{background:var(--bright);padding-bottom:clamp(48px,4.4vw,60px);padding-top:clamp(36px,3.5vw,48px)}
 .work-opening-grid{display:grid;gap:22px;grid-template-columns:1fr}
+.work-opening-copy{min-width:0}
 .work-opening-copy .kicker{color:var(--bronze)}
 .work-opening h1{font-size:var(--work-display-opening);letter-spacing:-.045em;line-height:.98;margin:24px 0 0;max-width:none;text-wrap:balance}
 .work-opening-note{border-top:1px solid var(--line);display:grid;gap:clamp(30px,5vw,68px);grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);padding-top:15px}
@@ -494,6 +495,7 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
 .about-identity-copy{align-self:center;padding:24px 0 28px}
 .about-page .about-identity h1{font-size:clamp(56px,5.4vw,72px);letter-spacing:-.052em;line-height:.96;margin:18px 0 0;max-width:none;white-space:nowrap}
 .about-page .about-intro{border-left:0;font-size:clamp(27px,2.45vw,34px);line-height:1.08;margin:16px 0 0;max-width:21ch;padding-left:0}
+.about-intro span{display:block}
 .about-welcome{color:var(--muted);font-size:14px;line-height:1.7;margin:14px 0 0;max-width:52ch}
 .about-page .about-identity .text-action{margin-top:17px}
 .about-page .about-main-portrait{height:auto;max-width:none;min-height:0;position:relative;justify-self:stretch;width:100%}
@@ -660,7 +662,7 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
 .formation-connectd{border-top:0;margin-top:0;padding-top:28px}
 .about-private-actions{align-items:center;display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:26px}
 .about-private-actions .contact-link,.about-private-actions .text-action{margin:0}
-@media(max-width:620px){.work-opening h1 span,.about-intro span{display:block;white-space:nowrap}.work-opening h1{max-width:none}.about-page .about-intro{font-size:clamp(25px,7.2vw,29px);max-width:none}}
+@media(max-width:620px){.work-opening h1 span,.about-intro span{display:block;white-space:nowrap}.work-opening h1{font-size:clamp(38px,11vw,44px);max-width:none}.about-page .about-intro{font-size:clamp(25px,7.2vw,29px);max-width:none}}
 @media(max-width:1040px){
   .mark span{display:none}.primary-nav ul,.home-page .primary-nav ul{gap:20px}
   .primary-nav .nav-cta{display:none}
