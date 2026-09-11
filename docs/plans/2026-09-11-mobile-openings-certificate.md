@@ -14,12 +14,11 @@
 
 **Files:**
 - Create: `assets/credentials/phenom-international-business-coach.jpg`
-- Create: `assets/credentials/phenom-international-business-coach.webp`
 - Create: `assets/credentials/phenom-international-business-coach.pdf`
 
 **Step 1: Download the two approved Drive files**
 
-Use the authenticated Google Drive source URLs supplied in the design note. Preserve the JPG and PDF bytes without changing their content.
+Use the authenticated Google Drive source URLs supplied in the design note. Preserve the PDF bytes. Do not publish the phone JPG directly because it contains GPS metadata.
 
 **Step 2: Verify the files**
 
@@ -29,11 +28,11 @@ Expected: one JPEG image and one single-page PDF.
 
 **Step 3: Create the delivery image**
 
-Create a high-quality WebP version capped at 1600px wide. Do not introduce a generative edit or alter the certificate content.
+Create a high-quality JPEG capped at 1600px wide and strip source metadata. Do not introduce a generative edit or alter the certificate content.
 
 **Step 4: Verify visual fidelity and size**
 
-Confirm the certificate name, Phenom mark, Sanjay Wadhwa signature and Sandeep Mukhi signature remain legible, and that the WebP is smaller than the JPG.
+Confirm the certificate name, Phenom mark, Sanjay Wadhwa signature and Sandeep Mukhi signature remain legible, the output is smaller than the source, and no GPS metadata remains.
 
 **Step 5: Commit**
 
@@ -95,7 +94,7 @@ git commit -m "fix: align mobile page openings"
 
 **Step 1: Write the failing certificate test**
 
-Assert that About references the WebP preview, links to the PDF, includes meaningful certificate alt text, and no longer includes “Certificate image to be supplied”.
+Assert that About references the optimised JPEG preview, links to the PDF, includes meaningful certificate alt text, and no longer includes “Certificate image to be supplied”.
 
 **Step 2: Run the focused test**
 
@@ -105,7 +104,7 @@ Expected: FAIL on the placeholder assertions.
 
 **Step 3: Implement the certificate figure**
 
-Use the current `certificate-display` visual language, a responsive WebP preview, a PDF link opening in a new tab with `rel="noopener"`, and a restrained factual caption.
+Use the current `certificate-display` visual language, a responsive JPEG preview, a PDF link opening in a new tab with `rel="noopener"`, and a restrained factual caption.
 
 **Step 4: Tune the image fit**
 

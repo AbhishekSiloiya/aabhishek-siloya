@@ -13,7 +13,7 @@ Quiet editorial authority: deliberate two-line statements, one clear portrait or
 - Work: lock “A record of decisions / made real.” to two lines on mobile; retain the existing supporting copy and organisation preview.
 - About: retain “Aabhishek Siloya.” as the title; lock “A founder’s perspective. / An honest outside view.” to two lines on mobile so more of the portrait enters the first viewport.
 - Letter: preserve its approved two-line title and current mobile fold.
-- Certificate: display an optimised image derived from the supplied JPG, with the supplied PDF as the full-certificate link. Replace the placeholder copy and reserve block without changing mentor order or narrative.
+- Certificate: display an optimised, metadata-stripped JPEG derived from the supplied JPG, with the supplied PDF as the full-certificate link. Do not publish the phone original because it contains location metadata. Replace the placeholder copy and reserve block without changing mentor order or narrative.
 
 ## Interaction thesis
 
