@@ -2,13 +2,15 @@
 
 **Review status:** Local only. Nothing in this folder is published.
 
-**Current pass:** Home reset to the live site's proven visual DNA. Work and About are frozen in this pass.
+**Current pass — 6 September 2026:** Cross-page visual consistency and plain-language editorial review. About has been revised; Home and Work now share its reading scale, navigation, footer and enquiry form. Production is unchanged.
 
 ## Pages ready for visual review
 
 - [Home](http://127.0.0.1:8767/) — dark portrait-led introduction, live-balanced typography, philosophy, CGP, private correspondence, prior work and the concise About close.
 - [Work](http://127.0.0.1:8767/work.html) — a compact evidence-led record: ten prior organisations, four operating decisions, a founder/operator bridge, one qualified TRVLR advisory note and a private close.
-- [About](http://127.0.0.1:8767/about.html) — a first-person trust narrative: identity, operating formation, why coaching, the private room and the wider practice.
+- [About](http://127.0.0.1:8767/about.html) — a personal introduction, operating background, coaching and mentorship, working expectations, and wider ventures and writing.
+
+Start with About, then compare Home and Work. See [the current audit](AUDIT-2026-09-06.md) for completed checks, editorial evidence boundaries and the remaining delivery-test dependency.
 
 ## What is intentionally in scope
 
