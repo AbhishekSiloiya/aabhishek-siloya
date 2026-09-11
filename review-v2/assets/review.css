@@ -598,6 +598,7 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
 .letter-opening-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(350px,.92fr);min-height:clamp(450px,64svh,520px)}
 .letter-opening-copy{align-self:center;padding:34px 64px 42px 0;position:relative;z-index:2}
 .letter-opening h1{font-size:clamp(58px,5.5vw,78px);letter-spacing:-.052em;line-height:.94;margin:22px 0 26px;max-width:11ch;text-wrap:balance}
+.letter-opening h1 span{display:block}
 .letter-opening-note{border-top:1px solid var(--line);color:var(--muted);font-size:15px;line-height:1.75;margin:0;max-width:47ch;padding-top:18px}
 .letter-portrait-wrap{min-height:0;position:relative}
 .letter-hero-portrait{height:100%;margin:0;overflow:hidden;position:absolute;inset:0}
@@ -655,7 +656,8 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
 .mentor-row h3 a:hover{color:var(--bronze)}
 .mentor-row p{color:var(--muted);font-size:14px;line-height:1.7;margin:0;max-width:65ch}
 .formation-connectd{border-top:0;margin-top:0;padding-top:28px}
-.about-page .about-private>.shell>.text-action{margin-top:26px}
+.about-private-actions{align-items:center;display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:26px}
+.about-private-actions .contact-link,.about-private-actions .text-action{margin:0}
 @media(max-width:1040px){
   .mark span{display:none}.primary-nav ul,.home-page .primary-nav ul{gap:20px}
   .primary-nav .nav-cta{display:none}
@@ -672,10 +674,11 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
   .primary-nav a,.home-page .primary-nav a{font-size:9px;letter-spacing:.06em;padding:8px 0}
   .letter-opening{padding:0}
   .letter-opening-grid{grid-template-columns:1fr;min-height:auto}
-  .letter-opening-copy{padding:28px 0 24px}
-  .letter-opening h1{font-size:clamp(44px,13vw,54px);line-height:.96;margin:18px 0 22px;max-width:9ch}
+  .letter-opening-copy{padding:22px 0 18px}
+  .letter-opening h1{font-size:clamp(36px,10vw,42px);line-height:.96;margin:15px 0 17px;max-width:none}
+  .letter-opening h1 span{white-space:nowrap}
   .letter-opening-note{font-size:14px;max-width:37ch;padding-top:15px}
-  .letter-portrait-wrap{min-height:220px}
+  .letter-portrait-wrap{min-height:245px}
   .letter-hero-portrait{inset:0 -20px}
   .letter-hero-portrait img{object-position:center 24%}
   .letter-seal{border-width:4px;bottom:22px;height:88px;left:14px;width:88px}
