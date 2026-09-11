@@ -98,3 +98,15 @@ test('mobile letter title is locked to two lines so the portrait enters the firs
   assert.match(css, /@media\(max-width:759px\)[\s\S]*\.letter-opening h1 span\{white-space:nowrap\}/);
   assert.match(css, /@media\(max-width:759px\)[\s\S]*\.letter-portrait-wrap\{min-height:245px\}/);
 });
+
+test('Work and About use controlled two-line mobile opening statements', async () => {
+  const work = await read('work.html');
+  const about = await read('about.html');
+  const css = await read('assets/review.css');
+
+  assert.match(work, /<h1 id="work-title" data-reveal><span>A record of decisions<\/span><span>made real\.<\/span><\/h1>/);
+  assert.match(about, /<p class="about-intro"><span>A founder’s perspective\.<\/span><span>An honest outside view\.<\/span><\/p>/);
+  assert.match(work, /href="assets\/review\.css\?v=25"/);
+  assert.match(about, /href="assets\/review\.css\?v=25"/);
+  assert.match(css, /@media\(max-width:620px\)[\s\S]*\.work-opening h1 span,\.about-intro span\{display:block;white-space:nowrap\}/);
+});

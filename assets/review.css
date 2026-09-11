@@ -658,6 +658,7 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
 .formation-connectd{border-top:0;margin-top:0;padding-top:28px}
 .about-private-actions{align-items:center;display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:26px}
 .about-private-actions .contact-link,.about-private-actions .text-action{margin:0}
+@media(max-width:620px){.work-opening h1 span,.about-intro span{display:block;white-space:nowrap}.work-opening h1{max-width:none}.about-page .about-intro{font-size:clamp(25px,7.2vw,29px);max-width:none}}
 @media(max-width:1040px){
   .mark span{display:none}.primary-nav ul,.home-page .primary-nav ul{gap:20px}
   .primary-nav .nav-cta{display:none}
