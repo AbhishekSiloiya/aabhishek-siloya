@@ -107,7 +107,7 @@ test('Work and About use controlled two-line mobile opening statements', async (
   assert.match(work, /<h1 id="work-title" data-reveal><span>A record of decisions<\/span>\s+<span>made real\.<\/span><\/h1>/);
   assert.match(about, /<p class="about-intro"><span>A founder’s perspective\.<\/span>\s+<span>An honest outside view\.<\/span><\/p>/);
   assert.match(work, /href="assets\/review\.css\?v=25"/);
-  assert.match(about, /href="assets\/review\.css\?v=25"/);
+  assert.match(about, /href="assets\/review\.css\?v=26"/);
   assert.match(css, /@media\(max-width:620px\)[\s\S]*\.work-opening h1 span,\.about-intro span\{display:block;white-space:nowrap\}/);
   assert.match(css, /\.work-opening-copy\{min-width:0\}/);
   assert.match(css, /\.about-intro span\{display:block\}/);
@@ -116,12 +116,16 @@ test('Work and About use controlled two-line mobile opening statements', async (
 
 test('About publishes the Phenom certificate without exposing the phone original', async () => {
   const about = await read('about.html');
+  const css = await read('assets/review.css');
   const preview = new URL('assets/credentials/phenom-international-business-coach.jpg', root);
   const document = new URL('assets/credentials/phenom-international-business-coach.pdf', root);
 
   await access(preview);
   await access(document);
   assert.match(about, /src="assets\/credentials\/phenom-international-business-coach\.jpg"/);
+  assert.match(about, /href="assets\/review\.css\?v=26"/);
+  assert.match(about, /width="1600" height="1188" loading="lazy" decoding="async"/);
+  assert.match(css, /\.certificate-preview--phenom\{aspect-ratio:1600\/1188;background:var\(--paper\)\}/);
   assert.match(about, /href="assets\/credentials\/phenom-international-business-coach\.pdf"[^>]*target="_blank"[^>]*rel="noopener"/);
   assert.match(about, /alt="Phenom International Business Coach certificate awarded to Aabhishek Siloya"/);
   assert.doesNotMatch(about, /Certificate image to be supplied|Certificate reserved|image is supplied/i);

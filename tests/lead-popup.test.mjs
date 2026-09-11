@@ -26,7 +26,7 @@ test('Home preserves private-conversation and trusted-introduction paths', async
 
 test('About publishes its mobile lead entry point with the current stylesheet', async () => {
   const html = await readFile(new URL('about.html', root), 'utf8');
-  assert.match(html, /assets\/review\.css\?v=25/);
+  assert.match(html, /assets\/review\.css\?v=26/);
 });
 
 test('conversation copy is plain, private and outcome-neutral', () => {
