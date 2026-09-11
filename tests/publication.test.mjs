@@ -8,8 +8,8 @@ const pagePath = new URL('index.html', root);
 test('publication metadata uses the canonical domain and dedicated social asset', async () => {
   const html = await readFile(pagePath, 'utf8');
 
-  assert.match(html, /<title>Aabhishek Siloya \| Strategic Counsel for Founders &amp; Family Businesses<\/title>/);
-  assert.match(html, /<meta name="description" content="Private strategic counsel for founders, owners and family businesses navigating profitable growth, leadership transition, succession and continuity\.">/);
+  assert.match(html, /<title>Aabhishek Siloya \| Global Business Coach &amp; Private Counsel<\/title>/);
+  assert.match(html, /<meta name="description" content="Private strategic counsel for founders, owners and family enterprises navigating growth, leadership transition and continuity\.">/);
   assert.match(html, /<link rel="canonical" href="https:\/\/aabhisheksiloya\.com\/">/);
   assert.match(html, /<meta property="og:url" content="https:\/\/aabhisheksiloya\.com\/">/);
   assert.match(html, /<meta property="og:image" content="https:\/\/aabhisheksiloya\.com\/assets\/aabhishek-siloya-social-card\.jpg">/);
@@ -36,7 +36,7 @@ test('search discovery files expose only public canonical URLs', async () => {
   assert.match(robots, /User-agent: PerplexityBot\nAllow: \//);
   assert.match(robots, /Sitemap: https:\/\/aabhisheksiloya\.com\/sitemap\.xml/);
   assert.match(sitemap, /<loc>https:\/\/aabhisheksiloya\.com\/<\/loc>/);
-  assert.match(sitemap, /<lastmod>2026-08-01<\/lastmod>/);
+  assert.match(sitemap, /<lastmod>2026-09-11<\/lastmod>/);
   assert.match(sitemap, /<loc>https:\/\/aabhisheksiloya\.com\/privacy\.html<\/loc>/);
 });
 
@@ -46,7 +46,7 @@ test('privacy and not-found pages are public and reachable from the site', async
   const notFound = await readFile(new URL('404.html', root), 'utf8');
 
   assert.match(page, /href="privacy\.html">Privacy<\/a>/);
-  assert.match(privacy, /90 days/);
+  assert.doesNotMatch(privacy, /90 days/);
   assert.match(privacy, /Web3Forms/);
   assert.match(privacy, /aabhisheksiloiya708@gmail\.com/);
   assert.match(privacy, /href="\.\/" aria-label="Aabhishek Siloya — home"/);
@@ -70,11 +70,11 @@ test('profile structured data connects the canonical website, person and organis
   assert.equal(website.publisher['@id'], person['@id']);
   assert.equal(profile['@type'], 'ProfilePage');
   assert.equal(profile.mainEntity['@id'], person['@id']);
-  assert.equal(profile.dateModified, '2026-08-01T13:09:22+01:00');
+  assert.equal(profile.dateModified, '2026-09-11');
   assert.equal(person['@type'], 'Person');
   assert.equal(person['@id'], 'https://aabhisheksiloya.com/#person');
   assert.equal(person.url, 'https://aabhisheksiloya.com/');
-  assert.equal(person.image.url, 'https://aabhisheksiloya.com/assets/aabhishek-black-white-side-profile.jpg');
+  assert.equal(person.image.url, 'https://aabhisheksiloya.com/assets/aabhishek-black-white-side-profile.webp');
   assert.deepEqual(person.sameAs, ['https://www.linkedin.com/in/aabhisheksiloya/']);
   assert.ok(person.knowsAbout.includes('Legacy and continuity'));
   assert.ok(person.knowsAbout.includes('Ownership and decision rights'));
@@ -97,7 +97,12 @@ test('hero portrait uses an optimised, high-priority delivery asset', async () =
 });
 
 test('below-fold portraits use responsive WebP delivery', async () => {
-  const html = await readFile(pagePath, 'utf8');
+  const html = (await Promise.all([
+    'index.html',
+    'work.html',
+    'about.html',
+    'letter.html',
+  ].map((file) => readFile(new URL(file, root), 'utf8')))).join('\n');
 
   for (const basename of [
     'aabhishek-premium-long-shot-2',
@@ -129,9 +134,10 @@ test('critical typography is self-hosted without a render-blocking font styleshe
 
 test('brand mark and footer disclaimer retain accessible names and contrast', async () => {
   const html = await readFile(pagePath, 'utf8');
+  const css = await readFile(new URL('assets/review.css', root), 'utf8');
 
-  assert.match(html, /<a class="mark" href="#home">AS <span>Aabhishek Siloya<\/span><\/a>/);
-  assert.match(html, /\.footer-disclaimer\s*\{[\s\S]*?color: rgba\(248,245,239,\.58\);/);
+  assert.match(html, /<a class="mark" href="\.\/">AS <span>Aabhishek Siloya<\/span><\/a>/);
+  assert.match(css, /\.footer-meta\{[^}]*color:rgba\(250,248,243,\.58\)/);
 });
 
 test('public deploy set excludes unused portrait source files', async () => {

@@ -2,74 +2,36 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
-import {
-  buildLeadPayload,
-  getLeadMode,
-} from '../assets/lead-form.mjs';
+import { leadCopy } from '../assets/lead-copy.mjs';
 
-const pagePath = new URL('../index.html', import.meta.url);
+const root = new URL('../', import.meta.url);
+const pages = ['index.html', 'work.html', 'about.html', 'letter.html'];
 
-test('page exposes four attributed lead entry points and one dialog', async () => {
-  const html = await readFile(pagePath, 'utf8');
-
-  for (const intent of ['hero', 'cgp', 'conversation', 'introduction']) {
-    assert.match(html, new RegExp(`data-lead-intent="${intent}"`));
-  }
-
-  assert.equal((html.match(/id="lead-dialog"/g) || []).length, 1);
-  assert.equal((html.match(/id="lead-form"/g) || []).length, 1);
-  assert.match(html, /Begin with clarity/);
-});
-
-test('conversation sources resolve to the private-conversation mode', () => {
-  for (const intent of ['hero', 'cgp', 'conversation']) {
-    const mode = getLeadMode(intent);
-    assert.equal(mode.kind, 'conversation');
-    assert.equal(mode.heading, 'Begin with the decision.');
+test('every public page exposes one accessible lead dialog', async () => {
+  for (const page of pages) {
+    const html = await readFile(new URL(page, root), 'utf8');
+    assert.equal((html.match(/id="lead-dialog"/g) || []).length, 1, page);
+    assert.equal((html.match(/id="lead-form"/g) || []).length, 1, page);
+    assert.match(html, /data-lead="conversation"/, page);
   }
 });
 
-test('introduction source resolves to the introduction mode', () => {
-  const mode = getLeadMode('introduction');
-
-  assert.equal(mode.kind, 'introduction');
-  assert.equal(mode.heading, 'Make a considered introduction.');
+test('Home preserves private-conversation and trusted-introduction paths', async () => {
+  const html = await readFile(new URL('index.html', root), 'utf8');
+  assert.match(html, /data-lead="conversation"/);
+  assert.match(html, /data-lead="introduction"/);
 });
 
-test('payload records attribution without leaking irrelevant mode fields', () => {
-  const payload = buildLeadPayload({
-    entries: {
-      name: 'Aabhishek Website Test',
-      email: 'aabhisheksiloiya708@gmail.com',
-      decision: 'TEST — Quiet Authority lead form delivery verification',
-      introduced_person: 'Should not be included',
-    },
-    intent: 'cgp',
-    pageUrl: 'https://aabhisheksiloya.com/?utm_source=linkedin&utm_campaign=quiet-authority',
-  });
-
-  assert.equal(payload.intent, 'cgp');
-  assert.equal(payload.utm_source, 'linkedin');
-  assert.equal(payload.utm_campaign, 'quiet-authority');
-  assert.equal(payload.page_url, 'https://aabhisheksiloya.com/?utm_source=linkedin&utm_campaign=quiet-authority');
-  assert.equal(payload.decision, 'TEST — Quiet Authority lead form delivery verification');
-  assert.equal('introduced_person' in payload, false);
+test('conversation copy is plain, private and outcome-neutral', () => {
+  const copy = leadCopy('conversation');
+  assert.equal(copy.intent, 'conversation');
+  assert.equal(copy.subject, 'A private conversation — Aabhishek Siloya');
+  assert.match(copy.note, /leave out sensitive/i);
 });
 
-test('introduction payload excludes private-conversation fields', () => {
-  const payload = buildLeadPayload({
-    entries: {
-      name: 'Trusted Introducer',
-      email: 'introducer@example.com',
-      introduced_person: 'A family-business owner',
-      introduction_context: 'A succession decision',
-      decision: 'Should not be included',
-    },
-    intent: 'introduction',
-    pageUrl: 'https://aabhisheksiloya.com/',
-  });
-
-  assert.equal(payload.introduced_person, 'A family-business owner');
-  assert.equal(payload.introduction_context, 'A succession decision');
-  assert.equal('decision' in payload, false);
+test('introduction copy requires permission before personal data is shared', () => {
+  const copy = leadCopy('introduction');
+  assert.equal(copy.intent, 'introduction');
+  assert.equal(copy.subject, 'An introduction — Aabhishek Siloya');
+  assert.match(copy.note, /permission/i);
 });
