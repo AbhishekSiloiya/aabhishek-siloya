@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests">
+  <meta name="description" content="See what is slowing growth and leave with one focused move for the next 30 days.">
+  <meta name="theme-color" content="#101827">
+  <link rel="canonical" href="https://aabhisheksiloya.com/diagnostic/">
+  <title>Founder Friction Finder | Aabhishek Siloya</title>
+  <link rel="stylesheet" href="./styles.css?v=2026091802">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" id="brandHome" aria-label="Return to start">
+        <span class="brand-mark">AS</span>
+        <span><strong>Founder Friction Finder</strong><small>by Aabhishek Siloya</small></span>
+      </button>
+      <div class="top-status"><a href="../">Aabhishek Siloya</a><b>Powered by Bhuzen</b><span id="topStatus">Private growth review • 5–6 minutes</span></div>
+    </header>
+
+    <main id="app" aria-live="polite">
+      <section class="screen intro-screen" id="introScreen">
+        <div class="intro-copy">
+          <span class="eyebrow">A private growth review by Aabhishek Siloya</span>
+          <h1>Founder Friction Finder</h1>
+          <p class="outcome-tagline">See what is slowing growth—and leave with one focused move for the next 30 days.</p>
+          <p class="lede">Eighteen evidence-led questions. One constraint to verify. A tailored action report for your business.</p>
+          <div class="promise-grid">
+            <div><span>01</span><strong>One clear friction</strong><p>Not a vague overall grade.</p></div>
+            <div><span>02</span><strong>Your evidence gap</strong><p>See what is known versus assumed.</p></div>
+            <div><span>03</span><strong>A 30-day move</strong><p>With steps and measures.</p></div>
+          </div>
+        </div>
+        <aside class="intro-card">
+          <div class="orbit" aria-hidden="true">
+            <span>Offer</span><span>Demand</span><span>Sales</span><span>Profit</span><span>Delivery</span><span>Founder</span>
+            <b>?</b>
+          </div>
+          <p>No public score. No false benchmark. Your result is a decision aid, not a diagnosis.</p>
+          <button class="button button-primary" id="startButton">Start the diagnostic <span>→</span></button>
+          <small>You can begin without giving contact details. Powered by Bhuzen.</small>
+        </aside>
+      </section>
+
+      <section class="screen context-screen hidden" id="contextScreen">
+        <div class="section-heading">
+          <button class="text-button" id="contextBack">← Back</button>
+          <div><span class="eyebrow">Your business today</span><h2>Make the result recognisably yours.</h2></div>
+          <p>Six details tailor the language, priorities and action plan. Nothing leaves this browser.</p>
+        </div>
+        <form id="contextForm" class="context-form">
+          <label><span>Your first name</span><input id="firstName" name="firstName" autocomplete="given-name" placeholder="e.g. Maya" required></label>
+          <label><span>Business name</span><input id="businessName" name="businessName" autocomplete="organisation" placeholder="e.g. Northstar Digital" required></label>
+          <label><span>Business type</span><select id="sector" name="sector" required>
+            <option value="">Choose the closest fit</option>
+            <option value="agency">Marketing or creative agency</option>
+            <option value="msp">IT services or MSP</option>
+            <option value="dev">Software development agency</option>
+            <option value="saas">B2B SaaS</option>
+            <option value="recruitment">Recruitment or staffing</option>
+            <option value="consulting">Consulting or business services</option>
+            <option value="construction">Construction or contracting</option>
+            <option value="property">Property or estate agency</option>
+            <option value="training">Training, events or specialist services</option>
+            <option value="other">Other service business</option>
+          </select></label>
+          <label><span>Annual revenue</span><select id="revenue" name="revenue" required>
+            <option value="">Choose a band</option>
+            <option value="pre1">Under £1m</option>
+            <option value="one3">£1m–£3m</option>
+            <option value="three5">£3m–£5m</option>
+            <option value="five10">£5m–£10m</option>
+            <option value="tenplus">Over £10m</option>
+          </select></label>
+          <label><span>Team size</span><select id="team" name="team" required>
+            <option value="">Choose a band</option>
+            <option value="solo">1–3 people</option>
+            <option value="small">4–10 people</option>
+            <option value="mid">11–30 people</option>
+            <option value="large">31–60 people</option>
+            <option value="larger">61+ people</option>
+          </select></label>
+          <label><span>Main revenue model</span><select id="model" name="model" required disabled>
+            <option value="">Choose the business type first</option>
+          </select></label>
+          <fieldset class="goal-field">
+            <legend>Most important outcome in the next 90 days</legend>
+            <div class="goal-options" id="goalOptions">
+              <label><input type="radio" name="goal" value="pipeline" required><span>Build a steadier pipeline</span></label>
+              <label><input type="radio" name="goal" value="conversion"><span>Win more of the right work</span></label>
+              <label><input type="radio" name="goal" value="margin"><span>Improve margin and cash</span></label>
+              <label><input type="radio" name="goal" value="capacity"><span>Grow without delivery strain</span></label>
+              <label><input type="radio" name="goal" value="freedom"><span>Reduce founder dependency</span></label>
+              <label><input type="radio" name="goal" value="focus"><span>Align the team around priorities</span></label>
+            </div>
+          </fieldset>
+          <div class="context-footer">
+            <div class="context-preview" id="contextPreview" aria-live="polite">
+              <span>Private by design</span>
+              <strong>Your answers stay in this browser.</strong>
+            </div>
+            <button class="button button-primary form-submit" id="contextSubmit" type="submit" disabled aria-disabled="true">Complete the details to begin</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="screen question-screen hidden" id="questionScreen">
+        <div class="question-top">
+          <button class="text-button" id="questionBack">← Back</button>
+          <progress class="engine-progress" id="progressFill" max="18" value="1" aria-label="Assessment progress"></progress>
+          <span id="progressText">Engine 1 of 6</span>
+        </div>
+        <div class="question-layout">
+          <aside class="engine-rail">
+            <span class="engine-number" id="engineNumber">01</span>
+            <p id="engineLabel">Offer clarity</p>
+            <div class="engine-ticks" id="engineTicks"></div>
+          </aside>
+          <article class="question-card mobile-question-card">
+            <div class="question-intro"><span class="question-kicker" id="questionKicker">QUESTION 01</span><span class="question-personal" id="questionPersonal"></span></div>
+            <h2 id="questionText"></h2>
+            <p class="evidence-prompt" id="evidencePrompt"></p>
+            <div class="answer-options" id="answerOptions"></div>
+            <label class="proof-toggle hidden" id="proofLabel">
+              <input type="checkbox" id="proofCheck">
+              <span><b>I can verify this</b><small>There is current data, a record or a repeatable observation behind my answer.</small></span>
+            </label>
+            <div class="question-actions">
+              <button class="button button-secondary" id="previousQuestion">Previous</button>
+              <button class="button button-primary" id="nextQuestion" disabled>Continue <span>→</span></button>
+            </div>
+          </article>
+          <article class="desktop-engine-card" id="desktopEngineCard">
+            <div class="desktop-engine-heading">
+              <div><span class="question-kicker" id="desktopEngineKicker">Engine 01 of 06</span><h2 id="desktopEngineTitle">Offer clarity</h2></div>
+              <p id="desktopEnginePersonal"></p>
+            </div>
+            <div class="desktop-question-group" id="desktopQuestionGroup"></div>
+            <div class="desktop-engine-actions">
+              <button class="button button-secondary" id="desktopPreviousEngine">Previous engine</button>
+              <span id="desktopCompletion">0 of 3 answered</span>
+              <button class="button button-primary" id="desktopContinueEngine" disabled>Complete this engine <span>→</span></button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="screen mirror-screen hidden" id="mirrorScreen">
+        <div class="mirror-card">
+          <span class="eyebrow" id="mirrorEyebrow">Engine reflection</span>
+          <div class="mirror-glyph" id="mirrorGlyph">01</div>
+          <h2 id="mirrorTitle"></h2>
+          <p class="mirror-personal" id="mirrorPersonal"></p>
+          <p id="mirrorCopy"></p>
+          <div class="mirror-score"><span id="mirrorBand"></span><small id="mirrorEvidence"></small></div>
+          <a class="insight-card" id="insightCard" href="#" target="_blank" rel="noopener noreferrer">
+            <span>UK market context</span>
+            <strong id="insightText"></strong>
+            <small id="insightSource"></small>
+          </a>
+          <button class="button button-primary" id="mirrorContinue">Continue <span>→</span></button>
+        </div>
+      </section>
+
+      <section class="screen reveal-screen hidden" id="revealScreen">
+        <div class="reveal-panel">
+          <span class="eyebrow">Your first mirror</span>
+          <h1><span id="revealName"></span>, your answers point to <em id="revealArchetype"></em>.</h1>
+          <p id="revealAha"></p>
+          <div class="reveal-note"><strong>This is the first constraint to verify—not a verdict.</strong><span id="revealReason"></span></div>
+          <button class="button button-primary" id="buildReport">Build my action report <span>→</span></button>
+        </div>
+      </section>
+
+      <section class="screen report-screen hidden" id="reportScreen">
+        <div class="report-toolbar no-print">
+          <button class="text-button" id="editAnswers">← Review answers</button>
+          <div>
+            <button class="button button-secondary" id="copySummary">Copy executive summary</button>
+            <button class="button button-primary" id="printReport">Save / print report</button>
+          </div>
+        </div>
+        <nav class="report-nav no-print" id="reportNav" aria-label="Report sections"></nav>
+        <div id="report"></div>
+        <div class="report-pager no-print" id="reportPager">
+          <button class="button button-secondary" id="previousReportSection">← Previous section</button>
+          <span id="reportPosition">Section 1 of 5</span>
+          <button class="button button-primary" id="nextReportSection">Next section <span>→</span></button>
+        </div>
+        <div class="report-end no-print">
+          <p><strong>Useful?</strong> The best next step is to discuss the result with one person who sees the business differently.</p>
+          <button class="button button-secondary" id="restartButton">Start a new assessment</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <dialog class="email-gate" id="emailGate" aria-labelledby="emailGateTitle">
+    <form method="dialog" id="emailGateForm">
+      <button class="email-gate-close" id="emailGateClose" type="button" aria-label="Close">×</button>
+      <span class="eyebrow">Keep your private report</span>
+      <h2 id="emailGateTitle">Save the insight. Unlock the 30-day plan.</h2>
+      <p id="emailGateCopy">Enter your email to send Aabhishek a concise diagnostic summary and continue to your tailored plan.</p>
+      <input type="hidden" name="access_key" value="a5ea9083-264a-492f-8bdb-df7062eb33d5">
+      <input type="hidden" name="from_name" value="Aabhishek Siloya website">
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" hidden>
+      <label class="email-gate-field"><span>Email address</span><input id="reportEmail" name="email" type="email" autocomplete="email" placeholder="you@company.com" required></label>
+      <label class="consent-row"><input id="reportConsent" type="checkbox" required><span><b>Send my diagnostic summary to Aabhishek</b><small id="emailGateDisclosure">This sends your name, business context, result, indicative range and 90-day priority through Web3Forms. Your 18 individual answers stay in your browser.</small></span></label>
+      <button class="button button-primary" id="unlockReport" value="default" disabled>Send and unlock full report <span>→</span></button>
+      <p class="email-gate-status" id="emailGateStatus" role="status" aria-live="polite"></p>
+      <small class="privacy-line">No mailing-list opt-in is assumed. Read the <a href="../privacy.html" target="_blank" rel="noopener noreferrer">privacy notice</a>.</small>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="./app.js?v=2026091802"></script>
+</body>
+</html>
