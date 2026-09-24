@@ -25,6 +25,7 @@ test('primary pages include native Editorial navigation', () => {
 test('homepage has an accessible, manual Editorial feature rail', () => {
   const html = read('index.html');
   const js = read('assets/review.js');
+  const css = read('assets/review.css');
   assert.match(html, /<section[^>]+id="editorial"/);
   assert.match(html, /data-editorial-track/);
   assert.match(html, /data-editorial-prev/);
@@ -33,6 +34,9 @@ test('homepage has an accessible, manual Editorial feature rail', () => {
   assert.match(html, /editorial\/essays\/everyone-wants-an-ai-employee\.html/);
   assert.match(html, /editorial\/essays\/the-new-household-economy\.html/);
   assert.doesNotMatch(js, /setInterval\s*\(/, 'Editorial rail must not autoplay');
+  assert.match(css, /\.editorial-card\{height:290px;min-height:0;/, 'desktop Editorial shelf must stay compact');
+  assert.match(css, /@media\(min-width:621px\)\{\.editorial-controls\{display:none\}/, 'desktop must not show unnecessary carousel controls');
+  assert.match(css, /@media\(max-width:620px\)[\s\S]*?\.editorial-card\{height:310px;/, 'mobile retains a compact swipeable feature');
 });
 
 test('Editorial landing is native and points to every published essay', () => {
@@ -43,6 +47,9 @@ test('Editorial landing is native and points to every published essay', () => {
   assert.match(html, /href="\.\.\/diagnostic\/"/);
   for (const article of articles) assert.match(html, new RegExp(`essays/${article.replaceAll('.', '\\.')}`));
   assert.doesNotMatch(html, /fonts\.googleapis\.com|fonts\.gstatic\.com/);
+  assert.match(html, /<body class="editorial-reading-room">/);
+  assert.match(html, /class="[^"]*editorial-index[^"]*"/);
+  assert.doesNotMatch(html, /archive-carousel/);
 });
 
 test('published essays have native canonicals, local typography and a return path', () => {
@@ -51,6 +58,8 @@ test('published essays have native canonicals, local typography and a return pat
     assert.match(html, new RegExp(`https://aabhisheksiloya\\.com/editorial/essays/${article.replaceAll('.', '\\.')}`));
     assert.match(html, /href="\.\.\/"/);
     assert.match(html, /editorial-site-bridge/);
+    assert.match(html, /class="editorial-continue"/);
+    assert.match(html, /class="editorial-continue-link" href="(?:\.\/|[^h][^"]*)"/);
     assert.doesNotMatch(html, /fonts\.googleapis\.com|fonts\.gstatic\.com/);
     assert.doesNotMatch(html, /src="https?:\/\//, `${article} must not make third-party image requests`);
   }
