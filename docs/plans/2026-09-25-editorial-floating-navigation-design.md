@@ -1,5 +1,7 @@
 # Editorial floating navigation design
 
+> Superseded by `2026-09-25-editorial-navigation-correction-design.md` after visual review showed that the extra navigation duplicated the global header and displaced the editorial heroes.
+
 ## Approved direction
 
 Give Editorial a compact secondary navigation layer across the landing page and every article. Replace the landing-page host portrait with the supplied orange-glasses illustration and keep orange confined to that artwork.

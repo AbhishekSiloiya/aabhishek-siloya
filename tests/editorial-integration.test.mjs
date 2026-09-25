@@ -55,8 +55,7 @@ test('Editorial landing is native and points to every published essay', () => {
   assert.match(html, /class="curated-feature"/);
   assert.match(html, /class="archive-carousel"/);
   assert.doesNotMatch(html, /reading-intro|editorial-index/);
-  assert.match(html, /<nav class="editorial-subnav" aria-label="Editorial sections">/);
-  for (const anchor of ['featured', 'archive', 'host']) assert.match(html, new RegExp(`href="#${anchor}"`));
+  assert.doesNotMatch(html, /editorial-subnav/, 'landing hero must not be displaced by secondary navigation');
   assert.match(html, /aabhishek-illustrated-orange-glasses\.webp/);
 });
 
@@ -68,10 +67,8 @@ test('published essays have native canonicals, local typography and a return pat
     assert.match(html, /editorial-site-bridge/);
     assert.match(html, /class="editorial-continue"/);
     assert.match(html, /class="editorial-continue-link" href="(?:\.\/|[^h][^"]*)"/);
-    assert.match(html, /class="editorial-subnav editorial-subnav--article"/);
-    assert.match(html, /class="editorial-subnav-prev" href="(?!#)[^"]+"/);
-    assert.match(html, /class="editorial-subnav-next" href="(?!#)[^"]+"/);
-    assert.match(html, /href="\.\.\/#archive"/);
+    assert.doesNotMatch(html, /editorial-subnav/, 'article hero must not be displaced by secondary navigation');
+    assert.match(html, /href="\.\.\/" aria-current="page">← Editorial<\/a>/, 'the site header must provide a compact return path');
     assert.doesNotMatch(html, /fonts\.googleapis\.com|fonts\.gstatic\.com/);
     assert.doesNotMatch(html, /src="https?:\/\//, `${article} must not make third-party image requests`);
   }

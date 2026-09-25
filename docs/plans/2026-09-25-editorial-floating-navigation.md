@@ -1,5 +1,7 @@
 # Editorial Floating Navigation Implementation Plan
 
+> Superseded by `2026-09-25-editorial-navigation-correction.md`.
+
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
 **Goal:** Add a polished secondary Editorial navigation to the landing and article pages, replace the host portrait, and apply restrained landing-page typography and spacing refinements.
