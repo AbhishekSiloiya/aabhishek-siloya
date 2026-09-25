@@ -43,6 +43,7 @@ test('homepage has an accessible, manual Editorial feature rail', () => {
 
 test('Editorial landing is native and points to every published essay', () => {
   const html = read('editorial/index.html');
+  const css = read('editorial/assets/site.css');
   assert.match(html, /<link rel="canonical" href="https:\/\/aabhisheksiloya\.com\/editorial\/">/);
   assert.match(html, /href="\.\.\/work\.html"/);
   assert.match(html, /href="\.\.\/about\.html"/);
@@ -57,9 +58,19 @@ test('Editorial landing is native and points to every published essay', () => {
   assert.doesNotMatch(html, /reading-intro|editorial-index/);
   assert.doesNotMatch(html, /editorial-subnav/, 'landing hero must not be displaced by secondary navigation');
   assert.match(html, /aabhishek-illustrated-orange-glasses\.webp/);
+  assert.match(html, /A considered collection, not a feed\./);
+  assert.match(html, /Discretion over noise\./);
+  assert.doesNotMatch(html, /The writing leads\. The design frames it\./);
+  assert.match(css, /\.curated-feature,\.salon-note\{[^}]*padding:clamp\(20px,2\.4vw,30px\)/, 'supporting notes must stay compact');
+  assert.match(css, /\.host-section\{[^}]*grid-template-columns:140px minmax\(0,1fr\)/, 'host must read as a slim signature');
 });
 
 test('published essays have native canonicals, local typography and a return path', () => {
+  const bridge = read('editorial/assets/article-bridge.css');
+  assert.match(bridge, /--editorial-site-header-height:70px/);
+  assert.match(bridge, /min-height:calc\(100svh - var\(--editorial-site-header-height\)\)!important/);
+  assert.match(bridge, /\.masthead\{top:var\(--editorial-site-header-height\)!important/);
+  assert.match(bridge, /\.mast\{display:none!important\}/, 'the travel cover already contains its own masthead');
   for (const article of articles) {
     const html = read(`editorial/essays/${article}`);
     assert.match(html, new RegExp(`https://aabhisheksiloya\\.com/editorial/essays/${article.replaceAll('.', '\\.')}`));
