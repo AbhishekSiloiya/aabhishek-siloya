@@ -1,0 +1,41 @@
+name: Site release checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-release-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the release candidate
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Reject unresolved merge markers
+        run: |
+          if git grep -n -E '^(<<<<<<<|=======|>>>>>>>)' -- '*.html' '*.css' '*.js' '*.mjs' '*.xml'; then
+            echo 'Unresolved merge markers found.'
+            exit 1
+          fi
+
+      - name: Run the complete static-site test suite
+        run: node --test tests/*.test.mjs
+
+      - name: Confirm the production domain file
+        run: test "$(tr -d '\r\n' < CNAME)" = "aabhisheksiloya.com"

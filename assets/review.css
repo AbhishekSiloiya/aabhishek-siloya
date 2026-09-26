@@ -320,6 +320,7 @@ html:has(.work-page){overflow-x:clip}
 
 .work-page .work-opening{background:var(--bright);padding-bottom:clamp(48px,4.4vw,60px);padding-top:clamp(36px,3.5vw,48px)}
 .work-opening-grid{display:grid;gap:22px;grid-template-columns:1fr}
+.work-opening-copy{min-width:0}
 .work-opening-copy .kicker{color:var(--bronze)}
 .work-opening h1{font-size:var(--work-display-opening);letter-spacing:-.045em;line-height:.98;margin:24px 0 0;max-width:none;text-wrap:balance}
 .work-opening-note{border-top:1px solid var(--line);display:grid;gap:clamp(30px,5vw,68px);grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);padding-top:15px}
@@ -523,6 +524,7 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
 .about-identity-copy{align-self:center;padding:24px 0 28px}
 .about-page .about-identity h1{font-size:clamp(56px,5.4vw,72px);letter-spacing:-.052em;line-height:.96;margin:18px 0 0;max-width:none;white-space:nowrap}
 .about-page .about-intro{border-left:0;font-size:clamp(27px,2.45vw,34px);line-height:1.08;margin:16px 0 0;max-width:21ch;padding-left:0}
+.about-intro span{display:block}
 .about-welcome{color:var(--muted);font-size:14px;line-height:1.7;margin:14px 0 0;max-width:52ch}
 .about-page .about-identity .text-action{margin-top:17px}
 .about-page .about-main-portrait{height:auto;max-width:none;min-height:0;position:relative;justify-self:stretch;width:100%}
@@ -627,6 +629,7 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
 .letter-opening-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(350px,.92fr);min-height:clamp(450px,64svh,520px)}
 .letter-opening-copy{align-self:center;padding:34px 64px 42px 0;position:relative;z-index:2}
 .letter-opening h1{font-size:clamp(58px,5.5vw,78px);letter-spacing:-.052em;line-height:.94;margin:22px 0 26px;max-width:11ch;text-wrap:balance}
+.letter-opening h1 span{display:block}
 .letter-opening-note{border-top:1px solid var(--line);color:var(--muted);font-size:15px;line-height:1.75;margin:0;max-width:47ch;padding-top:18px}
 .letter-portrait-wrap{min-height:0;position:relative}
 .letter-hero-portrait{height:100%;margin:0;overflow:hidden;position:absolute;inset:0}
@@ -678,13 +681,17 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
 .certificate-display{margin:0;max-width:510px;width:100%;justify-self:end;border:1px solid var(--line)}
 .certificate-preview{display:block;overflow:hidden;aspect-ratio:1080/766;background:#1b2235}
 .certificate-preview img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 46.8%}
+.certificate-preview--phenom{aspect-ratio:1600/1188;background:var(--paper)}
+.certificate-preview--phenom img{object-fit:contain;object-position:center}
 .certificate-display figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:12px 14px;font-size:10px;line-height:1.6;color:var(--muted)}
 .certificate-display figcaption a{text-decoration:underline;text-underline-offset:4px;color:var(--ink)}
 .mentor-row h3{font-size:28px;line-height:1.2;margin:0}
 .mentor-row h3 a:hover{color:var(--bronze)}
 .mentor-row p{color:var(--muted);font-size:14px;line-height:1.7;margin:0;max-width:65ch}
 .formation-connectd{border-top:0;margin-top:0;padding-top:28px}
-.about-page .about-private>.shell>.text-action{margin-top:26px}
+.about-private-actions{align-items:center;display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:26px}
+.about-private-actions .contact-link,.about-private-actions .text-action{margin:0}
+@media(max-width:620px){.work-opening h1 span,.about-intro span{display:block;white-space:nowrap}.work-opening h1{font-size:clamp(38px,11vw,44px);max-width:none}.about-page .about-intro{font-size:clamp(25px,7.2vw,29px);max-width:none}}
 @media(max-width:1040px){
   .mark span{display:none}.primary-nav ul,.home-page .primary-nav ul{gap:20px}
   .primary-nav .nav-cta{display:none}
@@ -701,10 +708,11 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
   .primary-nav a,.home-page .primary-nav a{font-size:9px;letter-spacing:.06em;padding:8px 0}
   .letter-opening{padding:0}
   .letter-opening-grid{grid-template-columns:1fr;min-height:auto}
-  .letter-opening-copy{padding:28px 0 24px}
-  .letter-opening h1{font-size:clamp(44px,13vw,54px);line-height:.96;margin:18px 0 22px;max-width:9ch}
+  .letter-opening-copy{padding:22px 0 18px}
+  .letter-opening h1{font-size:clamp(36px,10vw,42px);line-height:.96;margin:15px 0 17px;max-width:none}
+  .letter-opening h1 span{white-space:nowrap}
   .letter-opening-note{font-size:14px;max-width:37ch;padding-top:15px}
-  .letter-portrait-wrap{min-height:220px}
+  .letter-portrait-wrap{min-height:245px}
   .letter-hero-portrait{inset:0 -20px}
   .letter-hero-portrait img{object-position:center 24%}
   .letter-seal{border-width:4px;bottom:22px;height:88px;left:14px;width:88px}

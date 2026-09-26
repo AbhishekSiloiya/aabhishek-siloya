@@ -30,7 +30,6 @@ if (homePage) {
   const syncHeader = () => siteHeader?.classList.toggle('scrolled', window.scrollY > 24);
   syncHeader();
   window.addEventListener('scroll', syncHeader, { passive: true });
-
   const editorialTrack = document.querySelector('[data-editorial-track]');
   const moveEditorial = (direction) => {
     const card = editorialTrack?.querySelector('.editorial-card');
