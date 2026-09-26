@@ -22,4 +22,3 @@ Local review version only. Production remains untouched.
 - TRVLR reduced to a compact, qualified advisory note.
 - Reduced vertical space and display-type scale.
 - Mobile reading order and logo optical alignment tightened.
-

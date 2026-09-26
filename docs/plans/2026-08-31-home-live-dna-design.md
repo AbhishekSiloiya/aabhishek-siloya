@@ -65,4 +65,3 @@ Modify only `review-v2/index.html`, `review-v2/assets/review.css`, `review-v2/as
 - Philosophy and CGP title widths and outer spacing closely follow the live system.
 - Existing navigation, lead form, section order and copy continue to work.
 - Work and About pages remain visually and functionally unchanged.
-

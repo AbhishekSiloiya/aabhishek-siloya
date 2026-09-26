@@ -21,4 +21,3 @@
 3. Reorder the existing rows and replace only their relationship copy.
 4. Run all review tests and expect a full pass.
 5. Check the About section at desktop and 390px mobile widths.
-

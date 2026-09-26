@@ -28,4 +28,3 @@ Preserve the warm-stone section and cardless layout. Give the thesis the dominan
 - The provenance distinction is visible without reading like a legal disclaimer.
 - No new factual claim is introduced.
 - Mobile retains a clear, single-column reading order with no horizontal overflow.
-

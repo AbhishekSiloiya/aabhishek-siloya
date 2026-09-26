@@ -141,4 +141,3 @@ Update `review-v2/REVIEW.md` to state that Home has been reset to the live visua
 **Step 5: Commit**
 
 Run: `git add review-v2/REVIEW.md && git commit -m "docs: update home review handoff"`
-

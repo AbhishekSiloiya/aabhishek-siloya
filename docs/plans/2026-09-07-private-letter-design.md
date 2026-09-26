@@ -13,4 +13,3 @@
 **Body:** Plain, first-person language. Emphasise a useful outcome, independent judgement, discretion, candour and the possibility of a longer working relationship. Avoid guarantees, inflated authority and coaching clichés.
 
 **Responsive design:** A balanced two-column poster on desktop. On mobile, copy precedes a compact landscape portrait; the seal remains visible without obscuring the face.
-

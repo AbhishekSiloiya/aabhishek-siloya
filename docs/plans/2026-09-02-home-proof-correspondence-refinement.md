@@ -79,4 +79,3 @@ Inspect the correspondence and proof sections at 1200px, 390px and 320px. Confir
 git add review-v2/index.html review-v2/assets/review.css
 git commit -m "refine home correspondence rhythm"
 ```
-

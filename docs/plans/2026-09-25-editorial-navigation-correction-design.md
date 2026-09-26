@@ -17,4 +17,3 @@ Remove the secondary navigation from the Editorial landing and article pages. It
 - The Editorial hero and every article hero begin directly after their native header treatment.
 - Every published article has an explicit return path without adding height.
 - Desktop and mobile keep the first viewport focused on the hero.
-

@@ -39,4 +39,3 @@
 2. Verify hierarchy, line length, no horizontal overflow and a clear mobile sequence.
 3. Run `node --test review-v2/tests/*.test.mjs`, `node --check review-v2/assets/review.js` and `git diff --check`.
 4. Commit the finished section.
-

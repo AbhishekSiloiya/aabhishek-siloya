@@ -31,4 +31,3 @@
 2. Run all review tests.
 3. Inspect desktop, 768px and 390px layouts; confirm no horizontal overflow.
 4. Confirm no browser console errors and commit the implementation.
-

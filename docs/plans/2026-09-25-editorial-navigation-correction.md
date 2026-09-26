@@ -5,4 +5,3 @@
 3. Remove the obsolete shared navigation CSS.
 4. Label the existing article-header link `← Editorial`.
 5. Run the focused test, full test suite, formatting check and visual desktop/mobile review.
-

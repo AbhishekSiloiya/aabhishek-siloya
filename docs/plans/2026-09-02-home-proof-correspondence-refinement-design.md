@@ -27,4 +27,3 @@ On desktop, reduce the correspondence headline scale and its lower margin, short
 ## Evidence boundary
 
 The user supplied the revised delivery duration. The visible metric is concise, while “approximately” preserves the qualification. No other figures or client relationships change.
-
