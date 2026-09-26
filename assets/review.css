@@ -872,3 +872,36 @@ body :focus-visible{outline:2px solid var(--bronze);outline-offset:5px}
   .diagnostic-page .site-header,.diagnostic-page .footer,.diagnostic-report-nav,.diagnostic-report-meta button,.diagnostic-conversation-grid button,.lead-dialog{display:none!important}
   .diagnostic-report-panel[hidden]{display:block!important}.diagnostic-report-panel{break-inside:avoid;padding:28px 0}
 }
+
+/* Search-intent service pages */
+.service-page{background:var(--bright)}
+.service-hero{border-bottom:1px solid var(--line);padding:clamp(72px,10vw,140px) 0 clamp(58px,8vw,110px)}
+.service-hero-grid{display:grid;gap:clamp(50px,9vw,130px);grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr)}
+.service-hero h1{font-size:clamp(62px,7.6vw,112px);letter-spacing:-.06em;line-height:.86;margin:28px 0 30px;max-width:10ch}
+.service-deck{font-family:var(--serif);font-size:clamp(23px,2.25vw,34px);line-height:1.25;margin:0;max-width:27ch}
+.service-summary{align-self:end;border-top:1px solid var(--line);padding-top:22px}
+.service-summary span,.service-card span,.service-evidence span{color:var(--bronze);display:block;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.service-summary p{color:var(--muted);font-size:15px;line-height:1.75;margin:16px 0 24px}
+.service-section{padding:clamp(64px,8vw,110px) 0}
+.service-section--stone{background:var(--paper);border-block:1px solid var(--line)}
+.service-heading{display:grid;gap:40px;grid-template-columns:minmax(0,1fr) minmax(260px,.62fr);margin-bottom:44px}
+.service-heading h2{font-size:clamp(46px,5.4vw,78px);letter-spacing:-.05em;line-height:.94;margin:24px 0 0;max-width:12ch}
+.service-heading>p{align-self:end;color:var(--muted);font-size:15px;line-height:1.75;margin:0}
+.service-grid{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr)}
+.service-card{border-bottom:1px solid var(--line);padding:28px 28px 30px 0}
+.service-card+ .service-card{border-left:1px solid var(--line);padding-left:28px}
+.service-card h3{font-family:var(--serif);font-size:27px;font-weight:420;line-height:1.15;margin:18px 0 12px}
+.service-card p{color:var(--muted);font-size:13px;line-height:1.7;margin:0}
+.service-evidence{align-items:start;display:grid;gap:clamp(40px,7vw,100px);grid-template-columns:1fr 1fr}
+.service-evidence h2{font-size:clamp(45px,5vw,72px);letter-spacing:-.05em;line-height:.96;margin:24px 0}
+.service-evidence p{color:var(--muted);font-size:15px;line-height:1.75;max-width:56ch}
+.service-evidence-links{border-top:1px solid var(--line)}
+.service-evidence-links a{align-items:center;border-bottom:1px solid var(--line);color:var(--ink);display:flex;font-family:var(--serif);font-size:22px;justify-content:space-between;padding:20px 0;text-decoration:none}
+.service-faq{border-top:1px solid var(--line);margin-top:42px}.service-faq details{border-bottom:1px solid var(--line);padding:20px 0}.service-faq summary{cursor:pointer;font-family:var(--serif);font-size:23px}.service-faq p{color:var(--muted);font-size:13px;line-height:1.7;max-width:70ch}
+.service-cta{text-align:center}.service-cta h2{font-size:clamp(52px,6vw,86px);letter-spacing:-.055em;line-height:.92;margin:24px auto 30px;max-width:12ch}.service-cta p{color:var(--muted);font-size:15px;line-height:1.7;margin:0 auto 28px;max-width:53ch}
+.home-services{background:var(--paper);border-block:1px solid var(--line);padding:clamp(70px,9vw,120px) 0}.home-services .service-card a{color:var(--ink);display:inline-block;margin-top:20px;text-decoration:none}
+
+@media(max-width:759px){
+  .service-hero{padding-top:44px}.service-hero-grid,.service-heading,.service-evidence{display:block}.service-hero h1{font-size:clamp(54px,15vw,72px)}.service-summary,.service-heading>p,.service-evidence-links{margin-top:34px}
+  .service-grid{grid-template-columns:1fr}.service-card:nth-child(n){border-left:0;padding:24px 0}
+}

@@ -8,8 +8,8 @@ const pagePath = new URL('index.html', root);
 test('publication metadata uses the canonical domain and dedicated social asset', async () => {
   const html = await readFile(pagePath, 'utf8');
 
-  assert.match(html, /<title>Aabhishek Siloya \| Global Business Coach &amp; Private Counsel<\/title>/);
-  assert.match(html, /<meta name="description" content="Private strategic counsel for founders, owners and family enterprises navigating growth, leadership transition and continuity\.">/);
+  assert.match(html, /<title>Aabhishek Siloya \| Founder Business Coach &amp; Strategic Advisor<\/title>/);
+  assert.match(html, /<meta name="description" content="London-based business coach and strategic advisor helping founders, owners and family enterprises navigate growth, leadership transition and continuity\.">/);
   assert.match(html, /<link rel="canonical" href="https:\/\/aabhisheksiloya\.com\/">/);
   assert.match(html, /<meta property="og:url" content="https:\/\/aabhisheksiloya\.com\/">/);
   assert.match(html, /<meta property="og:image" content="https:\/\/aabhisheksiloya\.com\/assets\/aabhishek-siloya-social-card\.jpg">/);
@@ -36,7 +36,7 @@ test('search discovery files expose only public canonical URLs', async () => {
   assert.match(robots, /User-agent: PerplexityBot\nAllow: \//);
   assert.match(robots, /Sitemap: https:\/\/aabhisheksiloya\.com\/sitemap\.xml/);
   assert.match(sitemap, /<loc>https:\/\/aabhisheksiloya\.com\/<\/loc>/);
-  assert.match(sitemap, /<lastmod>2026-09-11<\/lastmod>/);
+  assert.match(sitemap, /<lastmod>2026-09-26<\/lastmod>/);
   assert.match(sitemap, /<loc>https:\/\/aabhisheksiloya\.com\/privacy\.html<\/loc>/);
 });
 
@@ -70,7 +70,7 @@ test('profile structured data connects the canonical website, person and organis
   assert.equal(website.publisher['@id'], person['@id']);
   assert.equal(profile['@type'], 'ProfilePage');
   assert.equal(profile.mainEntity['@id'], person['@id']);
-  assert.equal(profile.dateModified, '2026-09-11');
+  assert.equal(profile.dateModified, '2026-09-26');
   assert.equal(person['@type'], 'Person');
   assert.equal(person['@id'], 'https://aabhisheksiloya.com/#person');
   assert.equal(person.url, 'https://aabhisheksiloya.com/');
