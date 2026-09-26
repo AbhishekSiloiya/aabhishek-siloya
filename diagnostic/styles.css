@@ -119,8 +119,8 @@ input, select { width: 100%; min-height: 52px; padding: 0 14px; color: var(--ink
 .mirror-score span { color: var(--aqua); font-weight: 700; }
 .mirror-score small { color: #c5cbd6; }
 .reveal-panel { max-width: 900px; padding: 8vh 0; }
-.reveal-panel h1 { margin: 20px 0 28px; font-size: clamp(2.7rem, 5.5vw, 5rem); }
-.reveal-panel h1 em { color: var(--violet); font-style: normal; }
+.reveal-panel h2 { margin: 20px 0 28px; font-size: clamp(2.7rem, 5.5vw, 5rem); }
+.reveal-panel h2 em { color: var(--violet); font-style: normal; }
 .reveal-panel > p { max-width: 780px; color: var(--muted); font-size: 1.28rem; }
 .reveal-note { display: grid; gap: 5px; margin: 34px 0; padding: 20px; background: var(--white); border-left: 4px solid var(--amber); }
 .reveal-note span { color: var(--muted); }
@@ -450,8 +450,8 @@ input:focus, select:focus { border-color: var(--violet); box-shadow: 0 0 0 3px r
 .insight-card small { color: #9f988f; font-size: .64rem; }
 .mirror-card .button { margin-top: 3px; background: #f4ede2; border-color: #f4ede2; color: var(--ink); }
 .reveal-panel { max-width: 940px; padding: clamp(22px, 6vh, 62px) 0; }
-.reveal-panel h1 { margin: 12px 0 18px; }
-.reveal-panel h1 em { color: var(--violet); }
+.reveal-panel h2 { margin: 12px 0 18px; }
+.reveal-panel h2 em { color: var(--violet); }
 .reveal-panel > p { max-width: 760px; font-size: clamp(1.02rem, 2vw, 1.2rem); }
 .reveal-note { margin: 22px 0; padding: 16px 18px; border-left: 2px solid var(--amber); background: rgba(255,253,248,.82); }
 
