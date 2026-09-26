@@ -7,6 +7,7 @@ Static production source for `aabhisheksiloya.com`.
 ```bash
 node --check assets/lead-form.mjs
 node --test tests/lead-popup.test.mjs
+node --test tests/seo-aeo-visibility.test.mjs
 python3 -m http.server 8765
 ```
 
@@ -15,3 +16,7 @@ Open `http://127.0.0.1:8765/`.
 ## Publication boundary
 
 This repository contains public website assets only. Project strategy, DNS records and internal brand documentation live one directory above in `project/`.
+
+## Release operations
+
+Deployment-specific search submission and legacy-domain actions are tracked in [`docs/releases/2026-09-26-seo-aeo-visibility.md`](docs/releases/2026-09-26-seo-aeo-visibility.md).
