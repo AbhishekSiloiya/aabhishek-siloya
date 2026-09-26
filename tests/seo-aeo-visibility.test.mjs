@@ -59,6 +59,7 @@ test('service pages state one intent and expose one connected Service entity', a
     assert.match(html, /<meta property="og:description" content="[^"]+">/);
     assert.match(html, /<meta property="og:image" content="https:\/\/[^"]+\/assets\/aabhishek-siloya-social-card\.jpg">/);
     assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
+    assert.match(html, /<meta name="twitter:image" content="https:\/\/aabhisheksiloya\.com\/assets\/aabhishek-siloya-social-card\.jpg">/);
     assert.match(html, /class="lead-dialog"/);
     assert.match(html, /href="privacy\.html">Privacy notice<\/a>/);
     const service = entities(jsonLd(html)).find((item) => item['@type'] === 'Service');
@@ -88,7 +89,10 @@ test('Editorial landing and essays expose complete discovery metadata', async ()
 
   for (const essay of essays) {
     const html = await read(`editorial/essays/${essay}`);
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
+    assert.ok(canonical, `${essay} needs a canonical URL`);
     assert.match(html, /<meta name="description" content="[^"]+">/, `${essay} needs a description`);
+    assert.match(html, new RegExp(`<meta property="og:url" content="${canonical.replaceAll('.', '\\.')}"`));
     assert.match(html, /<meta property="og:title" content="[^"]+">/);
     assert.match(html, /<meta property="og:description" content="[^"]+">/);
     assert.match(html, /<meta property="og:image" content="https:\/\/[^"]+\/[^"]+">/);
@@ -105,10 +109,13 @@ test('Editorial landing and essays expose complete discovery metadata', async ()
 
 test('diagnostic has one H1, site identity and share metadata', async () => {
   const html = await read('diagnostic/index.html');
+  const canonical = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
+  assert.ok(canonical, 'diagnostic needs a canonical URL');
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.match(html, /<link rel="icon" href="\.\.\/assets\/favicon\.svg"/);
   assert.match(html, /<meta property="og:title" content="[^"]+">/);
   assert.match(html, /<meta property="og:description" content="[^"]+">/);
+  assert.match(html, new RegExp(`<meta property="og:url" content="${canonical.replaceAll('.', '\\.')}"`));
   assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
 });
 

@@ -12,6 +12,8 @@
 - Added the three service URLs and the previously omitted Know Own Grow essay to `sitemap.xml`.
 - Added complete Article schema, author links, descriptions and social metadata to all eight editorial pages.
 - Added complete share metadata, favicon identity and one-H1 semantics to the Founder Friction Finder.
+- Added self-referencing `og:url` metadata to every editorial article and the Founder Friction Finder so social crawlers resolve the same canonical identity as search engines.
+- Corrected the family-enterprise Twitter card image URL and added regression coverage for canonical social URLs and the shared card asset.
 
 ## Post-deployment operations
 
