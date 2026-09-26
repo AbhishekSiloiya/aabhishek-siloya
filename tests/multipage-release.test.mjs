@@ -86,13 +86,12 @@ test('sitemap exposes the complete canonical site', async () => {
   }
   assert.match(sitemap, /<lastmod>2026-09-11<\/lastmod>/);
 });
-
 test('mobile letter title is locked to two lines so the portrait enters the first viewport', async () => {
   const letter = await read('letter.html');
   const css = await read('assets/review.css');
 
   assert.match(letter, /<h1 id="letter-title"><span>For those carrying<\/span><span>what comes next\.<\/span><\/h1>/);
-  assert.match(letter, /href="assets\/review\.css\?v=27"/);
+  assert.match(letter, /href="assets\/review\.css\?v=28"/);
   assert.match(css, /\.letter-opening h1 span\{display:block\}/);
   assert.match(css, /@media\(max-width:759px\)[\s\S]*\.letter-opening h1\{[^}]*font-size:clamp\(36px,10vw,42px\)[^}]*max-width:none/);
   assert.match(css, /@media\(max-width:759px\)[\s\S]*\.letter-opening h1 span\{white-space:nowrap\}/);
@@ -106,8 +105,8 @@ test('Work and About use controlled two-line mobile opening statements', async (
 
   assert.match(work, /<h1 id="work-title" data-reveal><span>A record of decisions<\/span>\s+<span>made real\.<\/span><\/h1>/);
   assert.match(about, /<p class="about-intro"><span>A founder’s perspective\.<\/span>\s+<span>An honest outside view\.<\/span><\/p>/);
-  assert.match(work, /href="assets\/review\.css\?v=27"/);
-  assert.match(about, /href="assets\/review\.css\?v=27"/);
+  assert.match(work, /href="assets\/review\.css\?v=28"/);
+  assert.match(about, /href="assets\/review\.css\?v=28"/);
   assert.match(css, /@media\(max-width:620px\)[\s\S]*\.work-opening h1 span,\.about-intro span\{display:block;white-space:nowrap\}/);
   assert.match(css, /\.work-opening-copy\{min-width:0\}/);
   assert.match(css, /\.about-intro span\{display:block\}/);
@@ -123,7 +122,7 @@ test('About publishes the Phenom certificate without exposing the phone original
   await access(preview);
   await access(document);
   assert.match(about, /src="assets\/credentials\/phenom-international-business-coach\.jpg"/);
-  assert.match(about, /href="assets\/review\.css\?v=27"/);
+  assert.match(about, /href="assets\/review\.css\?v=28"/);
   assert.match(about, /width="1600" height="1188" loading="lazy" decoding="async"/);
   assert.match(css, /\.certificate-preview--phenom\{aspect-ratio:1600\/1188;background:var\(--paper\)\}/);
   assert.match(about, /href="assets\/credentials\/phenom-international-business-coach\.pdf"[^>]*target="_blank"[^>]*rel="noopener"/);
