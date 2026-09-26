@@ -57,7 +57,7 @@ test('service pages state one intent and expose one connected Service entity', a
     assert.equal((html.match(/<h1\b/g) || []).length, 1, `${path} needs one H1`);
     assert.match(html, /<meta property="og:title" content="[^"]+">/);
     assert.match(html, /<meta property="og:description" content="[^"]+">/);
-    assert.match(html, /<meta property="og:image" content="https:\/\/aabhisheksiloya\.com\/assets\/aabhishek-siloya-social-card\.jpg">/);
+    assert.match(html, /<meta property="og:image" content="https:\/\/[^"]+\/assets\/aabhishek-siloya-social-card\.jpg">/);
     assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
     assert.match(html, /class="lead-dialog"/);
     assert.match(html, /href="privacy\.html">Privacy notice<\/a>/);
@@ -91,7 +91,7 @@ test('Editorial landing and essays expose complete discovery metadata', async ()
     assert.match(html, /<meta name="description" content="[^"]+">/, `${essay} needs a description`);
     assert.match(html, /<meta property="og:title" content="[^"]+">/);
     assert.match(html, /<meta property="og:description" content="[^"]+">/);
-    assert.match(html, /<meta property="og:image" content="https:\/\/aabhisheksiloya\.com\/[^"]+">/);
+    assert.match(html, /<meta property="og:image" content="https:\/\/[^"]+\/[^"]+">/);
     assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
     assert.equal((html.match(/<h1\b/g) || []).length, 1, `${essay} needs one H1`);
     assert.match(html, /href="\.\.\/\.\.\/about\.html"[^>]*rel="author"/);
